@@ -12,20 +12,37 @@
 # You should have received a copy of the GNU Lesser General Public License along
 # with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
 %>
-
-<div class="background">
+<style>
+	input:focus, select:focus {
+	  box-shadow: 0 0 5px #CCC !important;
+	  border-color: #CCC !important; 
+	}
+</style>
+<div class="background background-with-images">
   <div class="container pt-9 pb-8">
     <div class="row">
-      <div class="col-md-12 col-sm-12 text-center">
+      <div class="col-md-6 col-sm-6 text-center" style="padding-top: 150px; min-height: 568px;">
         <h1 id="main-text" class="display-4 mb-4"> <%= t("landing.welcome").html_safe %></h1>
-        <p class="lead offset-lg-2 col-lg-8 col-sm-12 "><%= t("landing.about", href: link_to(t("greenlight"), "https://bigbluebutton.org/2018/07/09/greenlight-2-0/", target: "_blank", rel: "noopener")).html_safe %></p>
+        <p class="lead col-lg-12 col-sm-12 "><%= t("landing.about", href: link_to(t("greenlight"), "https://bigbluebutton.org/2018/07/09/greenlight-2-0/", target: "_blank", rel: "noopener")).html_safe %></p>
         <%= link_to "https://youtu.be/Hso8yLzkqj8", target: "_blank" do %>
-          <h4><%= t("landing.video") %> <i class="far fa-play-circle ml-1"></i></h4>
+          <h4 style="font-size: 1.825rem; padding-top: 15px; color: #ffc800 !important;"><%= t("landing.video") %> <i class="far fa-play-circle ml-1"></i></h4>
         <% end %>
+      </div>
+	  <div class="col-md-4 col-sm-4 text-center" style="padding-top: 100px; min-height: 568px;">
+        <div>
+          <div class='join-meeting '>
+            <h4 class="mb-3">Try our demo</h4>
+            <form name="form1" method="GET" action="/demo/demoHTML5.jsp">
+              <input type="text" id="username" required="" name="username" placeholder="Enter Your Name" size="29" class="field input-default" autofocus>
+              <input type="submit" value="Join" class="submit_btn button success large" style="margin-top: 20px;"><br>
+              <input type="hidden" name="action" value="create">
+            </form>
+          </div>
+        </div>
       </div>
 
     </div>
   </div>
 </div>
 
-<%= render "main/components/features" %>
+<%= render "main/components/features_new" %>
