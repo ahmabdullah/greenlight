@@ -536,7 +536,7 @@ en:
   signup:
     password_confirm: Password Confirmation
     subtitle: Create an Account
-    title: Sign up
+    title: Join a Session
     with: Sign up with %{provider}
   terms:
     accept: I accept the %{href}

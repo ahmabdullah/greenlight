@@ -16,5 +16,9 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w(_primary_theme.scss
                                                  pickr.min.js
                                                  monolith.min.scss
+                                                 home.scss
+                                                 extra.scss
+                                                 responsive.scss
+                                                 styles.scss
                                                  bootstrap-select.min.js
                                                  bootstrap-select.min.css)

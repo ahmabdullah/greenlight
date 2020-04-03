@@ -49,7 +49,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <!-- Primary color styling -->
-    <%= stylesheet_link_tag themes_primary_path %>
+    <%#= stylesheet_link_tag themes_primary_path %>
 
     <script type="text/javascript">
       // Include the correct translated strings for Javascript
@@ -59,33 +59,39 @@
   </head>
 
   <body class="app-background" data-controller="<%= params[:controller] %>" data-action="<%= params[:action] %>" data-relative-root="<%= Rails.configuration.relative_url_root || "/" %>">
-    <%= render "shared/header" %>
-
-    <div class="wrapper">
-      <% if bigbluebutton_endpoint_default? %>
-        <div class="alert alert-icon alert-danger text-center mb-0">
-          <div class="flash alert d-inline">
-            <i class="fas fa-exclamation-triangle"></i>
-            <p class="d-inline"><%= t("test_install",
-              href: link_to(t("docs").downcase, "http://docs.bigbluebutton.org/install/greenlight-v2.html#2-install-greenlight", target: "_blank", rel: "noopener")
-            ).html_safe %>
+      <div class="container main_area">
+	<%= render "shared/header" %>
+          
+        <% if bigbluebutton_endpoint_default? %>
+          <div class="alert alert-icon alert-danger text-center mb-0">
+            <div class="flash alert d-inline">
+              <i class="fas fa-exclamation-triangle"></i>
+              <p class="d-inline"><%= t("test_install",
+                href: link_to(t("docs").downcase, "http://docs.bigbluebutton.org/install/greenlight-v2.html#2-install-greenlight", target: "_blank", rel: "noopener")
+              ).html_safe %>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
 
-      <% unless Rails.configuration.banner_message.blank? %>
-        <div class="alert alert-icon alert-danger text-center mb-0">
-          <div class="flash alert d-inline">
-            <p class="d-inline"><%= Rails.configuration.banner_message %></p>
+        <% unless Rails.configuration.banner_message.blank? %>
+          <div class="alert alert-icon alert-danger text-center mb-0">
+            <div class="flash alert d-inline">
+              <p class="d-inline"><%= Rails.configuration.banner_message %></p>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
 
-      <%= render 'shared/flash_messages' unless flash.empty? %>
+        <%= render 'shared/flash_messages' unless flash.empty? %>
 
-      <%= yield %>
-    </div>
+        <%= yield %>
+	
+        <%= render "shared/footer" %>
+</div>
+    
+      
 
-    <%= render "shared/footer" %>
+    
+
+    
   </body>
 </html>

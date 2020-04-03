@@ -32,6 +32,7 @@ class UsersController < ApplicationController
   # POST /u
   def create
     @user = User.new(user_params)
+    @user.status = 1
     @user.provider = @user_domain
 
     # User or recpatcha is not valid

@@ -18,31 +18,28 @@
 	  border-color: #CCC !important; 
 	}
 </style>
-<div class="background background-with-images">
-  <div class="container pt-9 pb-8">
+<div id="slider_area" style="background-image: url('/header_bg.webp');">
     <div class="row">
-      <div class="col-md-6 col-sm-6 text-center" style="padding-top: 150px; min-height: 568px;">
-        <h1 id="main-text" class="display-4 mb-4"> <%= t("landing.welcome").html_safe %></h1>
-        <p class="lead col-lg-12 col-sm-12 "><%= t("landing.about", href: link_to(t("greenlight"), "https://bigbluebutton.org/2018/07/09/greenlight-2-0/", target: "_blank", rel: "noopener")).html_safe %></p>
-        <%= link_to "https://youtu.be/Hso8yLzkqj8", target: "_blank" do %>
-          <h4 style="font-size: 1.825rem; padding-top: 15px; color: #ffc800 !important;"><%= t("landing.video") %> <i class="far fa-play-circle ml-1"></i></h4>
-        <% end %>
-      </div>
-	  <div class="col-md-4 col-sm-4 text-center" style="padding-top: 100px; min-height: 568px;">
-        <div>
-          <div class='join-meeting '>
-            <h4 class="mb-3">Try our demo</h4>
-            <form name="form1" method="GET" action="/demo/demoHTML5.jsp">
-              <input type="text" id="username" required="" name="username" placeholder="Enter Your Name" size="29" class="field input-default" autofocus>
-              <input type="submit" value="Join" class="submit_btn button success large" style="margin-top: 20px;"><br>
-              <input type="hidden" name="action" value="create">
-            </form>
-          </div>
+        <div class="col-2 col-sm-2 col-md-2"></div>
+        <div class="col-4 col-sm-4 col-md-4">
+                <div class="slider_content">
+                        <h1><%= t("landing.welcome").html_safe %></h1>
+                        <p><%= t("landing.about").html_safe %></p>
+                        <div class="row join_area">
+                            <form name="form1" method="GET" action="/demo/demoHTML5.jsp" style="width: 100%;">
+                                  <input type="hidden" name="action" value="create">
+                                  <div class="col-8 col-sm-8 col-md-8 pr-0" style="display:inline-block;">
+                                      <input type="username" name="username" placeholder="Enter Your Name">
+                                  </div>
+                                  <div class="col-4 col-sm-4 col-md-4 pl-0" style="display:inline-block; width: 30%;">
+                                      <button type="submit">Joins, it free</button>
+                                  </div>
+                              </form>
+                        </div>
+                </div>
         </div>
-      </div>
-
+        <div class="col-6 col-sm-6 col-md-6"></div>
     </div>
-  </div>
 </div>
 
 <%= render "main/components/features_new" %>

@@ -1,0 +1,173 @@
+// BigBlueButton open source conferencing system - http://www.bigbluebutton.org/.
+//
+// Copyright (c) 2018 BigBlueButton Inc. and by respective authors (see below).
+//
+// This program is free software; you can redistribute it and/or modify it under the
+// terms of the GNU Lesser General Public License as published by the Free Software
+// Foundation; either version 3.0 of the License, or (at your option) any later
+// version.
+//
+// BigBlueButton is distributed in the hope that it will be useful, but WITHOUT ANY
+// WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+// PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public License along
+// with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
+
+.header-brand-img {
+    height: 3rem;
+}
+.btn {
+    height: 2.5rem;
+}
+.header {
+    height: 76px;
+}
+.background-with-images{
+	background: #FFF;
+	background-image: url("/home_banner.webp");
+    background-position: center center;
+    background-size: cover;
+}
+.display-4{
+	font-size: 3em;
+	color: #FFF;
+	text-rendering: optimizelegibility;
+	font-weight: 700;
+}
+.lead {
+	font-size: 18px;
+    color: #fff;
+    font-weight: normal;
+}
+.bbb-features i {
+    display: block;
+    float: left;
+    width: 50px;
+    height: auto;
+    margin: 0 15px 0 0;
+    padding: 15px 0;
+    background-color: #f2f2f2;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-size: 22px;
+    text-align: center;
+    color: #C62530;
+}
+.bbb-features  {
+    margin-top: 100px;
+}
+.bbb-features .bbb-features-content {
+    overflow: hidden;
+	text-align: left;
+}
+
+.featurette-divider {
+    margin: 20px 0 40px 0;
+    border-top: 0;
+    border-bottom: 1px #eee solid;
+}
+
+.featurette-heading {
+    text-align: center;
+    margin-bottom: 40px;
+	border-bottom: 1px solid #eee;
+}
+.bbb-features-content p {
+    font-weight: 300;
+    margin-bottom: 20px;
+    line-height: 26px;
+    font-size: 15px;
+    color: #929699;
+}
+.bbb-features-content h3 {
+    margin-bottom: 8px;
+}
+.bbb-features-content h3 a {
+    color: #666 !important;
+	font-size: .75em;
+}
+.span {
+    float: left;
+    display: inline;
+    min-height: 1em;
+    margin: 0 .5% 20px;
+}
+.four {
+    width: 26%;
+	margin-right: 10%;
+}
+.span:last-child {
+    margin-right: 0;
+}
+.bbb-features i {
+    display: block;
+    float: left;
+    width: 50px;
+    height: auto;
+    margin: 0 15px 0 0;
+    padding: 15px 0;
+    background-color: #f2f2f2;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-size: 22px;
+    text-align: center;
+    color: #C62530;
+}
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.bounceInLeft {
+    -webkit-animation-name: bounceInLeft;
+    animation-name: bounceInLeft;
+}
+.six {
+    width: 48%;
+}
+.join-meeting {
+    background: rgba(0,0,0,0.4);
+    padding: 60px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.1);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.mb-3, .my-3 {
+    margin-bottom: 2rem !important;
+    font-size: 32px;
+    color: #FFF;
+}
+.input-default {
+    display: block;
+    background: #fff;
+    border: 1px solid #c7cdd1;
+    border-radius: 3px;
+    font-size: 14px;
+    padding: 12px 18px;
+    margin-bottom: 15px;
+	width: 100%;
+}
+.input-default:focus {
+    border: 1px solid #ccc !important;
+}
+input:focus, select:focus {
+  box-shadow: 0 0 5px #CCC !important;
+  border-color: #CCC !important; 
+}
+.join-meeting .button {
+    margin-bottom: 20px;
+}
+.button.success {
+    color: #FFF;
+    background: #29363B;
+}
+.button.large {
+    padding: 10px 45px;
+    font-size: 1.1em;
+}

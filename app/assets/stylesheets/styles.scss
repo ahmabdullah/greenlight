@@ -1,0 +1,132 @@
+p{
+	margin: 0px;
+	padding: 0px;
+}
+h1,h2,h3,h4,h5,h6{
+	margin: 0px;
+	padding: 0px;
+}
+ul{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	background: #EEF3FA;
+	font-family: 'Roboto', sans-serif !important;
+}
+.main_area{
+	padding: 0px
+}
+.container{
+	background: #FFFFFF;
+}
+/* header css start */
+#header_area{
+	box-shadow: 0px 4px 44px 0px rgba(0, 0, 0, 0.14);
+	padding: 18px 0px 6px 0px;
+}
+.header_logo{}
+.header_logo img{
+    width: 35%;
+    float: right;
+}
+.header_menu nav ul{
+	list-style: none;
+	text-align: center;
+	margin-top: -4px;
+}
+.header_menu nav ul li{
+	display: inline-block;
+}
+.header_menu nav ul li a{
+    padding: 10px 16px 10px 16px !important;
+    display: table;
+    font-size: 12px;
+    text-decoration: none;
+    color: #29363B;
+    font-weight: 510;
+}
+.login_area{
+    float: left;
+}
+.login_area ul{
+    list-style: none;
+    text-align: center;
+    margin-top: -4px;
+}
+.login_area ul li{
+    display: inline-block;
+}
+.login_area ul li a{
+    padding: 10px 16px 10px 16px !important;
+    display: table;
+    font-size: 12px;
+    text-decoration: none;
+    color: #29363B;
+    font-weight: 700;
+}
+.login_area ul li:first-child a{
+    padding-left: 0px !important;
+    color: #D23034;
+}
+.login_area ul li:first-child a::after {
+    content: "";
+    width: 1px;
+    height: 65px;
+    background: #ddd;
+    position: absolute;
+    top: -18px;
+    left: 38%;
+}
+/* header css end*/
+#slider_area{
+    width: 100%;
+    background-image: url('img/header_bg.webp');
+    background-size: cover;
+    background-position: center;
+}
+.slider_content{
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+.slider_content h1{
+    color: #29363B;
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+}
+.slider_content p{
+    font-size: 13px;
+    margin-top: 25px;
+    color: #000;
+    padding-right: 38px;
+}
+.join_area input{
+    width: 100%;
+    border: none;
+    box-shadow: 0px 4px 44px 0px rgba(0, 0, 0, 0.14);
+    padding: 6px 6px;
+    font-size: 12px;
+}
+.join_area{
+    margin-top: 35px;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #ddd;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #ddd;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #ddd;
+}
+.join_area button{
+    background-color: #D23034;
+    border: none;
+    font-size: 12px;
+    padding: 6px 10px;
+    color: #fff;
+}

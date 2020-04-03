@@ -112,7 +112,7 @@ class RoomsController < ApplicationController
     cookies.encrypted[:greenlight_name] = @join_name unless cookies.encrypted[:greenlight_name] == @join_name
 
     save_recent_rooms
-
+    #abort(current_user.inspect)
     logger.info "Support: #{current_user.present? ? current_user.email : @join_name} is joining room #{@room.uid}"
     join_room(default_meeting_options)
   end
