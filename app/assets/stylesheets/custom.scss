@@ -1,0 +1,276 @@
+/* BigBlueButton open source conferencing system - http://www.bigbluebutton.org/.
+*
+* Copyright (c) 2018 BigBlueButton Inc. and by respective authors (see below).
+*
+* This program is free software; you can redistribute it and/or modify it under the
+* terms of the GNU Lesser General Public License as published by the Free Software
+* Foundation; either version 3.0 of the License, or (at your option) any later
+* version.
+*
+* BigBlueButton is distributed in the hope that it will be useful, but WITHOUT ANY
+* WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+* PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+*
+* You should have received a copy of the GNU Lesser General Public License along
+* with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
+*/
+
+// Place all the styles related to the Main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.background{
+    background: #f9f9f9;
+}
+#header_area{
+    border-bottom: 1px solid #eee;
+}
+.btn-block{
+    font-size: 15px;
+    padding: 6px 10px;
+    color: #fff;
+}
+#schedule {
+    width: 217px;
+    font-size: 13px;
+}
+.input-icon-addon{
+    border-right: 1px solid #ddd;
+}
+.input-icon .form-control:not(:first-child){
+    padding-left: 3rem;
+}
+#copy{
+    width: 75px;
+    padding: 7px 4px;
+    font-size: 12px;
+}
+.subtitle{
+    font-size: 20px;
+    padding: 10px;
+}
+.card{
+    border: 0px solid #ccc;
+}
+#recordings-table{
+    border: 1px solid rgba(0,40,100,0.12)
+}
+.form-control{
+    border: 1px solid #F1F1F1;
+}
+.signin-button{
+    padding: 2px 7px;
+    font-size: 13px;
+    display: inline-block;
+    width: auto !important;
+}
+a:hover{
+    text-decoration: none !important;
+}
+/*#slider_area{
+    min-height: 525px;
+}*/
+.footer_contents {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+.price1 a {
+    background-color: #D24F57;
+    border: 1px solid #ddd;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 6px 30px;
+    border-radius: 5px;
+}
+.price3 {
+    background-color: #fff !important;
+    border: 1px solid #ddd !important;
+    color: #000 !important;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 6px 30px !important;
+}
+.fixed-bottom {
+    background: #ffc;
+    border-top: 1px solid #cc2;
+}
+#room-name-text {
+    word-break: break-all;
+    word-wrap: break-word;
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#filter-room-status{
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+}
+#status-room-select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+    border-radius: 5px;
+}
+.manage-users-status.selected, .manage-users-status.selected:visited, .manage-users-status.selected i {
+    background-color: #C62530 !important;
+    border-color: #C62530 !important;
+    color: white !important;
+}
+.price h2{
+    font-size: 28px;
+}
+.price1 h2{
+    font-size: 28px;
+}
+.top_price{
+    margin-bottom: 20px;
+}
+.business_plan_two {
+    padding-top: 9px;
+    border-top: 1px solid #ccc;
+}
+.price1 ul {
+    padding-bottom: 13px;
+    padding-top: 10px;
+}
+.top_price {
+    margin-bottom: 26px;
+}
+.business_plan_two {
+    padding-top: 17px;
+}
+.limitless_content h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 26px;
+    font-weight: 300;
+    color: #F7EAEA;
+    margin-bottom: 20px;
+    line-height: 30px;
+}
+
+
+.slider_content p {
+    font-size: 16px;
+}
+.features_content h6 {
+    font-size: 16px;
+}
+.features_content p {
+    font-size: 16px;
+}
+.price ul li{
+    font-size: 14px;
+    line-height: 22px;  
+}
+.price1 ul li {
+    font-size: 14px;
+    line-height: 22px;
+}
+.limitless_sub_content h6 {
+    font-size: 16px;
+    font-weight: 700;
+}
+.limitless_sub_content p {
+    font-size: 16px;
+    line-height: 20px;
+}
+.demo_img img {
+    margin-top: 50px;
+}
+.contact1 p {
+    font-size: 15px;
+}
+.subscribe_content p {
+    font-size: 16px;
+}
+.footer_logo p {
+    font-size: 16px;
+}
+.footer_menu ul li a {
+    font-size: 16px;
+    line-height: 23px;
+}
+.contact_email > p {
+    font-size: 16px;
+    line-height: 20px;
+}
+.join_area input {
+    padding: 12px 6px;
+    font-size: 14px;
+}
+.join_area button {
+    font-size: 14px;
+    padding: 12px 10px;
+}
+.form_area input {
+    border: 1px solid #ddd;
+    height: 40px;
+}
+.form_area textarea {
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+
+.header_menu nav ul li a {
+    font-weight: 700;
+}
+.login_area ul li a {
+    font-weight: 700;
+}
+features_content{
+	margin-bottom: 22px;
+}
+.price ul {
+    width: 276px;
+}
+.price ul li {
+	font-size: 15px;
+    line-height: 24px;
+}
+.price1 ul {
+    width: 276px;
+}
+
+.price1 ul {
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+.price1 ul li {
+    font-size: 15px;
+    line-height: 24px;
+}
+.footer_menu ul li a {
+    line-height: 29px;
+}
+.price ul {
+    width: 285px;
+}
+.features_content p {
+    margin-bottom: 25px;
+}
+.card-body{
+    border-top: 1px solid rgba(0,40,100,0.12);
+}
+.card-header {
+    border-bottom: none;
+    text-align: center;
+    margin: 0 auto;
+}
+.school_name{
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 48%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.6rem;
+}
+.school-image{
+    width: 40px;
+    margin-right: 7px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}

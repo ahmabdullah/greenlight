@@ -1,0 +1,57 @@
+<%
+# BigBlueButton open source conferencing system - http://www.bigbluebutton.org/.
+# Copyright (c) 2018 BigBlueButton Inc. and by respective authors (see below).
+# This program is free software; you can redistribute it and/or modify it under the
+# terms of the GNU Lesser General Public License as published by the Free Software
+# Foundation; either version 3.0 of the License, or (at your option) any later
+# version.
+#
+# BigBlueButton is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+# You should have received a copy of the GNU Lesser General Public License along
+# with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
+%>
+
+<div class="row">
+  <div class="col-12">
+    <div class="table-responsive">
+      <table id="rooms-table" class="table table-hover table-outline table-vcenter text-nowrap card-table">
+        <thead>
+          <tr>
+            <th data-header="email" data-order="<%= @order_column == "email" ? @order_direction : "none" %>">
+              <%= t("administrator.users.table.email") %>
+              <% if @order_column == "email" && @order_direction == "desc" %>
+                ↓
+              <% elsif @order_column == "email" && @order_direction == "asc" %>
+                ↑
+              <% end %>
+            </th>
+            <th class="text-center"><i class="icon-settings"></i></th>
+          </tr>
+        </thead>
+        <tbody id="rooms-table">
+          <% @emails.each do |email| %>
+            <tr id="room-block" data-path="<%= update_settings_path(email) %>">
+              <td>
+                <div id="room-title" class="form-inline edit_hover_class">
+                  <text id="room-name-text">
+                    <%= email.email %>
+                  </text>
+                </div>
+                <div class="small text-muted">
+                  <%= [t("administrator.users.table.created"), ": ", email.created_at].join %>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <% if @emails.empty?%>
+        <div class="float-right mr-4 mt-4">
+          <%== pagy_bootstrap_nav(@pagy) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

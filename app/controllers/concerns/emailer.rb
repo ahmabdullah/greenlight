@@ -99,7 +99,7 @@ module Emailer
   def send_approval_user_signup_email(user)
     begin
       return unless Rails.configuration.enable_email_verification
-
+      
       admin_emails = admin_emails()
       UserMailer.approval_user_signup(user, admins_url(tab: "pending"),
       admin_emails, @settings).deliver_now unless admin_emails.empty?

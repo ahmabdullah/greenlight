@@ -31,6 +31,7 @@ class UsersController < ApplicationController
 
   # POST /u
   def create
+    #abort(user_params.inspect)
     @user = User.new(user_params)
     @user.status = 1
     @user.provider = @user_domain

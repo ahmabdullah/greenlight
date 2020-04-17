@@ -64,6 +64,7 @@ class User < ApplicationRecord
         u.image = auth_image(auth) unless u.image
         auth_roles(u, auth)
         u.email_verified = true
+        u.status = 1 unless u.status
         u.save!
       end
     end

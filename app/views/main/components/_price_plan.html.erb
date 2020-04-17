@@ -1,0 +1,133 @@
+<%
+# BigBlueButton open source conferencing system - http://www.bigbluebutton.org/.
+# Copyright (c) 2018 BigBlueButton Inc. and by respective authors (see below).
+# This program is free software; you can redistribute it and/or modify it under the
+# terms of the GNU Lesser General Public License as published by the Free Software
+# Foundation; either version 3.0 of the License, or (at your option) any later
+# version.
+#
+# BigBlueButton is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+# You should have received a copy of the GNU Lesser General Public License along
+# with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
+%>
+
+<div id="price_plan_area">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 text-center">
+          <div class="plan_title">
+                  <h4><%= t("price_plan.title") %></h4>
+          </div>
+      </div>
+    </div>
+
+      <div class="row plan_area">
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
+              <div class="row row_modify">
+                  <div class="col-12 col-sm-6 col-md-4">
+                      <div class="price">
+                          <p><%= t("price_plan.individual_free") %></p>
+                          <h2><%= t("price_plan.free") %></h2>
+                          <p class="subcrip"><%= t("price_plan.no_subscription") %></p>
+                          <div>
+                            <ul>
+                                <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_free.host_no") %></li>
+                                <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_free.unlimited_participant") %></li>
+                                <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_free.call_duration_limit") %></li>
+                                <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_free.centrally_youtube_video_play") %></li>
+                                <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_free.screen_share") %></li>
+                                <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_free.presentation_share") %></li>
+                                <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_free.file_sharing") %></li>
+                                <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_free.chat") %></li>
+                                <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_free.note") %></li>
+                                <li class="p_disable"><%= t("price_plan.packages_free.record") %></li>
+                                <li class="p_disable"><%= t("price_plan.packages_free.download") %></li>
+                                <li class="p_disable"><%= t("price_plan.packages_free.whiteboard") %></li>
+                                <li class="p_disable"><%= t("price_plan.packages_free.polling") %></li>
+                                <li class="p_disable"><%= t("price_plan.packages_free.dashboard") %></li>
+                            </ul>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12 text-center">
+                                  <button onclick="location.href = '<%= signup_path %>';"><%= t("price_plan.join") %></button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-4">
+                      <div class="price">
+                        <p><%= t("price_plan.individual_paid") %></p>
+                        <h2><%= t("price_plan.amount_individual") %></h2>
+                        <p class="subcrip"><%= t("price_plan.host_info_individual") %></p>
+                        <div>
+                          <ul>
+                            <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_free.host_no") %></li>
+                            <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_individual.unlimited_participant") %></li>
+                            <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_individual.call_duration_limit") %></li>
+                            <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_individual.unlimited_numbers_calls") %></li>
+                            <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_individual.centrally_youtube_video_play") %></li>
+                            <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_individual.screen_share") %></li>
+                            <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_free.presentation_share") %></li>
+                            <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_individual.file_sharing") %></li>
+                            <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_individual.chat") %></li>
+                            <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_individual.note") %></li>
+                            <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_individual.record") %></li>
+                            <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_individual.download") %></li>
+                            <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_individual.whiteboard") %></li>
+                            <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_individual.polling") %></li>
+                            <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_individual.dashboard") %></li>
+                          </ul>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <a class="price3" href="#contact_area" ><%= t("price_plan.contact_us") %></a>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-4">
+                      <div class="price">
+                          <p><%= t("price_plan.business") %></p>
+                          <h2><%= t("price_plan.amount_business_top") %></h2>
+                          <p class="subcrip"><%= t("price_plan.host_info_businees") %></p>
+                          <div>
+                            <ul class="price3_host">
+                              <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_business.host_business_top") %></li>
+                              <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_business.host_simul_business_top") %></li>
+                              <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_business.business_features_common") %>s</li>
+                              <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_business.business_whiteboard_common") %></li>
+                            </ul>
+                          </div>
+                          <div class="row top_price">
+                              <div class="col-md-12 text-center">
+                                  <a class="price3" href="#contact_area" ><%= t("price_plan.contact_us") %></a>
+                              </div>
+                          </div>
+                          <div class="business_plan_two">
+                            <h2><%= t("price_plan.amount_business_bottom") %></h2>
+                            <p class="subcrip"><%= t("price_plan.host_info_businees") %></p>
+                            <div>
+                              <ul class="price3_host">
+                                <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_business.host_business_bottom") %></li>
+                                <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_business.host_simul_business_bottom") %></li>
+                                <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_business.business_features_common") %>s</li>
+                                <li><span><i class="fa fa-check"></i></span><%= t("price_plan.packages_business.business_whiteboard_common") %></li>
+                              </ul>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <a class="price3" href="#contact_area" ><%= t("price_plan.contact_us") %></a>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-1"></div>
+      </div>
+</div>
+
+	

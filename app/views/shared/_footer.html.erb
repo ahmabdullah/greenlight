@@ -13,8 +13,14 @@
 # with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
 %>
 
-<footer class="footer pt-3">
-  <p class="text-center mb-1"><%= t("footer.powered_by", href: link_to(t("greenlight"), "https://bigbluebutton.org/2018/07/09/greenlight-2-0/", target: "_blank", rel: "noopener")).html_safe %> <%= Greenlight::Application::VERSION %></p>
-</footer>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 text-center">
+            <div class="footer_bottom_content">
+                    <p>@<%= t("footer.contact.copyright").html_safe %></p>
+            </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
 
 <%= render "shared/components/cookie_warning" %>

@@ -31,13 +31,22 @@ module Populator
       else
         User.includes(:roles)
     end
+    
+    initial_user_status = case @status
+      when "free"
+        initial_user.where(status: 1)
+      when "paid"
+        initial_user.where("status = ? or status IS ?", 2, nil)
+      else
+        initial_user.all
+    end
 
     current_role = Role.find_by(name: @tab, provider: @user_domain) if @tab == "pending" || @tab == "denied"
 
     initial_list = if current_user.has_role? :super_admin
-      initial_user.where.not(id: current_user.id)
+      initial_user_status.where.not(id: current_user.id)
     else
-      initial_user.without_role(:super_admin).where.not(id: current_user.id)
+      initial_user_status.without_role(:super_admin).where.not(id: current_user.id)
     end
 
     if Rails.configuration.loadbalanced_configuration
@@ -53,12 +62,37 @@ module Populator
   # Returns a list of rooms that are in the same context of the current user
   def server_rooms_list
     if Rails.configuration.loadbalanced_configuration
-      Room.includes(:owner).where(users: { provider: @user_domain })
-          .admins_search(@search)
-          .admins_order(@order_column, @order_direction)
+      if @status_room.to_i == 1
+        Room.includes(:owner).where(users: { provider: @user_domain }, bbb_id: @running_room_bbb_ids)
+            .admins_search(@search)
+            .admins_order(@order_column, @order_direction)
+      elsif @status_room.to_i == 2
+        Room.includes(:owner).where(users: { provider: @user_domain }).where.not(bbb_id: @running_room_bbb_ids)
+            .admins_search(@search)
+            .admins_order(@order_column, @order_direction)
+      else
+        Room.includes(:owner).where(users: { provider: @user_domain })
+            .admins_search(@search)
+            .admins_order(@order_column, @order_direction)
+      end
     else
-      Room.includes(:owner).all.admins_search(@search).admins_order(@order_column, @order_direction)
+      if @status_room.to_i == 1
+        Room.includes(:owner).where(bbb_id: @running_room_bbb_ids)
+            .admins_search(@search)
+            .admins_order(@order_column, @order_direction)
+      elsif @status_room.to_i == 2
+        Room.includes(:owner).where.not(bbb_id: @running_room_bbb_ids)
+            .admins_search(@search)
+            .admins_order(@order_column, @order_direction)
+      else
+        Room.includes(:owner).admins_search(@search).admins_order(@order_column, @order_direction)
+      end
     end
+  end
+
+  # Returns a list of rooms that are in the same context of the current user
+  def manage_email_list
+    EmailContact.all.admins_search(@search).admins_order(@order_column, @order_direction)
   end
 
   # Returns list of rooms needed to get the recordings on the server

@@ -15,19 +15,32 @@
 
 <div class="form-group mt-n3">
   <div class="row">
-    <div class="col-12 tags">
-      <span id="active" class="btn btn-sm tag manage-users-tab <%= 'selected' if @tab == 'active' %>">
-        <%= t("roles.active") %>
-      </span>
-      <span id="pending" class="btn btn-sm tag manage-users-tab <%= 'selected' if @tab == 'pending' %>">
-        <%= t("roles.pending") %>
-      </span>
-      <span id="denied" class="btn btn-sm tag manage-users-tab <%= 'selected' if @tab == 'denied' %>">
-        <%= t("roles.banned") %>
-      </span>
-      <span id="deleted" class="btn btn-sm tag manage-users-tab <%= 'selected' if @tab == 'deleted' %>">
-        <%= t("roles.deleted") %>
-      </span>
+    <div class="col-12" style="border-bottom: 1px solid #ccc;padding-bottom: 13px;">
+      <div class="col-8 tags" style="display: inline-block;">
+          <span id="active" class="btn btn-sm tag manage-users-tab <%= 'selected' if @tab == 'active' %>">
+            <%= t("roles.active") %>
+          </span>
+          <span id="pending" class="btn btn-sm tag manage-users-tab <%= 'selected' if @tab == 'pending' %>">
+            <%= t("roles.pending") %>
+          </span>
+          <span id="denied" class="btn btn-sm tag manage-users-tab <%= 'selected' if @tab == 'denied' %>">
+            <%= t("roles.banned") %>
+          </span>
+          <span id="deleted" class="btn btn-sm tag manage-users-tab <%= 'selected' if @tab == 'deleted' %>">
+            <%= t("roles.deleted") %>
+          </span>
+      </div>
+      <div class="col-4 tags" style="display: inline-block;width: 32%;text-align: right;">
+          <span id="all" class="btn btn-sm tag manage-users-status <%= 'selected' if @status == 'all' %>">
+            <%= t("roles.all") %>
+          </span>
+          <span id="free" class="btn btn-sm tag manage-users-status <%= 'selected' if @status == 'free' %>">
+            <%= t("roles.free") %>
+          </span>
+          <span id="paid" class="btn btn-sm tag manage-users-status <%= 'selected' if @status == 'paid' %>">
+            <%= t("roles.paid") %>
+          </span>
+      </div>
     </div>
   </div>
 </div>

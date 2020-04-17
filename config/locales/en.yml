@@ -17,6 +17,8 @@
 # Locale.
 
 en:
+  bncd:
+      school_name: Bangladesh Navy College Dhaka
   activerecord:
     attributes:
       user:
@@ -30,6 +32,7 @@ en:
         user:
           confirmation: doesn't match Password
   administrator:
+    email_contact: Email Contacts
     site_settings:
       authentication:
         disabled: Disabled
@@ -91,6 +94,8 @@ en:
       delete: User deleted successfully
       delete_fail: Failed to delete user
       demoted: User has been successfully demoted
+      upgrade: User has been successfully Upgraded
+      downgrade: User has been successfully Downgraded
       invite: Invite successfully sent to %{email}
       invite_email_verification: Emails must be enabled in order to use this method. Please contact your system administrator.
       merge_fail: There was an issue merging the user accounts. Please check the users selected and try again 
@@ -149,10 +154,13 @@ en:
         perm_delete: Permanently Delete
         unban: Unban User
         undelete: Undelete
+        downgrade: Downgrade User
+        upgrade: Upgrade User
       table:
         authenticator: Authenticator
         created: Created
         name: Name
+        email: Email
         not_found: No users match your search
         no_users: No users found
         role: Role
@@ -177,6 +185,7 @@ en:
   email: Email
   email_sent: Your %{email_type} email has been sent! (Please check your Spam folder if you haven't received it)
   enter_your_name: Enter your name!
+  bncd_enter_your_name: "Format: Roll No - Your Full Name"
   errors:
     bigbluebutton:
       help: Please make sure the proper steps have been taken. <a href="%{doc_link}">Learn more</a>
@@ -236,6 +245,119 @@ en:
     submit: Submit
   go_back: Go back
   greenlight: Greenlight
+  price_plan: 
+      title: Choose The Plan That Work For You
+      individual_free: Individual
+      individual_paid: Individual
+      business: Education Institute
+      free: Free
+      10_dollar: $10
+      amount_individual: BDT 2000
+      amount_business_top: BDT 50,000
+      amount_business_bottom: BDT 100,000
+      no_subscription: No Subscription
+      host_info_individual: "/Month"
+      host_info_businees: "/Month"
+      host_info_businees_prefix: "*Minimun 5 Host"
+      join: Register for free
+      subscribe: Subscribe
+      contact_us: Contact Us
+      packages_free:
+          host_no: 1 Host
+          unlimited_participant: 50 Participants per class/session 
+          call_duration_limit: 40 min per session
+          unlimited_numbers_calls: Unlimited numbers calls
+          centrally_youtube_video_play: Centrally Youtube Video Play
+          screen_share: Screen Share
+          presentation_share: Presentation Share
+          file_sharing: File Sharing Storage up to 100 MB
+          chat: Chat (Private & Group)
+          note: Note Sharing
+          record: Record Session (Up To 5GB / 15 hour)
+          download: Download Recorded Session
+          whiteboard: Single user Whiteboard
+          polling: Polling
+          dashboard: Personal Dashboard
+          whitelabel: White label
+      packages_individual:
+          host_no: 1 Host
+          unlimited_participant: Unlimited Participant
+          call_duration_limit: No call Duration Limit
+          unlimited_numbers_calls: Unlimited numbers calls
+          centrally_youtube_video_play: Centrally Youtube Video Play
+          screen_share: Screen Share
+          presentation_share: Presentation Share
+          file_sharing: File Sharing Storage up to 2GB
+          chat: Chat (Private & Group)
+          note: Note Sharing
+          record: Record Session (Up To 5GB / 15 hour)
+          download: Download Recorded Session
+          whiteboard: Single user Whiteboard
+          polling: Polling
+          dashboard: Personal Dashboard
+          whitelabel: White label
+      packages_business:
+          host_business_top: 50 Teachers
+          host_business_bottom: 100 Teachers
+          host_simul_business_top: Simultaneous 50 Hosts 
+          host_simul_business_bottom: Simultaneous 100 Hosts 
+          business_features_common: All features of Individual package / host
+          business_whiteboard_common: Multi users Whiteboard 
+          unlimited_participant: Unlimited Participant
+          call_duration_limit: No call duration limit
+          unlimited_numbers_calls: Unlimited numbers calls
+          centrally_youtube_video_play: Centrally youtube video play
+          screen_share: Screen Share
+          file_sharing: File Sharing Storage up to 100MB
+          chat: Chat (Private and group)
+          note: Note Sharing
+          record: Record sessiong (Up to 5GB)
+          download: Download Recorded session
+          whiteboard: Multi user Whiteboard
+          polling: Polling
+          dashboard: Dashboard
+          whitelabel: White label
+  limitless:
+      title: Get the limitless learning with more possibilities
+      join: Register for free
+      title_options:
+          options_1: Feel the presence.
+          options_2: Uphold your label.
+          options_3: Reach anyone, anytime.
+      title_desc:
+          options_1: Build stronger relationships with video-first experiences through intensive engagement with your peers.
+          options_2: Showcase your best with the assistance of CassLive’s video conferencing controls.
+          options_3: broaden your business reach, while reducing administrative and transportation expenses.
+  features:
+      head_title: Features
+      more: More Features
+      less: Less Features
+      title:
+          record_and_playback: Record and PlayBack
+          whiteboard: Whiteboard
+          screen_sharing: Screen Sharing
+          audio: Audio
+          presentation: Presentation
+          webcam: Webcam
+          chat: Chat
+          attendance: Attendance
+          breakout: Breakout Rooms
+          poll: Polling
+          emoji: "Emoji’s"
+          caption: Live Captioning
+      desc:
+          record_and_playback_desc: "Record and share your meeting with the pupils who have missed out on the session! ClassLive allows you to record and share the recording directly to your peers."
+          whiteboard_desc: "With ClassLive, enjoy the perks of a real meeting room from home. Through the board, you can receive direct annotations, zoom in the screen, draw to make points etc, all in one screen. "
+          screen_sharing_desc: "Online learning is more versatile through ClassLive’s screen sharing tool! Users can share their screens simultaneously to relay information."
+          audio_desc: "Help your pupil without any hassles of a crowded room. Voice out your queries using ClassLive’s high quality audio. "
+          presentation_desc: "Want to share further resource materials with your people? Use ClassLive’s “Presentation” feature to upload any pdf or word document."
+          webcam_desc: "Visual meetings with no limit of webcam sharing. Like an authentic room, monitor your meeting or classes through multiple webcam sharing!"
+          chat_desc: "Communicate privately or in public! Feel free to share your thoughts with your pupil through ClassLive."
+          attendance_desc: "You can see the list of attendees of your classes or meeting. Let’s start with the most obvious and important feature."
+          breakout_desc: "Breakout rooms allow you to split your meeting/classes in different sessions. The host can choose to split the participants of the meeting into these separate sessions automatically or manually, and can switch between sessions at any time."
+          poll_desc: "Confused about a decision? Ask your peers! Engage your audience more by polling them anytime!"
+          emoji_desc: "Are you satisfied with your meetings? Communicate your thoughts and feelings through emoji’s at ClassLive. Attendees can raise his/her hand to ask any question through this emoji’s."
+          caption_desc: "The \"Live Captioning\" allows you to add live captions for your peers. These will later appear as a subtitle to add in more value to your meeting."
   header:
     all_recordings: All Recordings
     dropdown:
@@ -244,7 +366,48 @@ en:
       home: Home
       settings: Profile
       signout: Sign out
+      features: Features
+      plan_n_price: Plan & Price
+      why_us: Why Us
+      contact_us: Contact Us
   home_room: Home Room
+  footer: 
+      contact: 
+          title: Get in Touch!
+          desc: Send us your email address so that we can contact and discuss your needs.
+          send: Send
+          faq: FAQ
+          classlive_title: ClassLive, a system for online learning offers you the option to take live classes and record them for the benifis of learners.
+          copyright: ClassLive. All rights reserved.
+          email: Email
+          phone: Phone
+          phone_1: "+8801617804310"
+          phone_2: "+8801718569170"
+          email_address: "info@classlivebd.com"
+          phone: Phone
+  contact:
+      title: Contact Us
+      query: let us know your query
+      enter_name: Enter Your Name
+      enter_email: Enter Your Email
+      enter_phone: Enter Your Phone No
+      enter_query: Enter Your query
+      send: Send
+      question:
+          title: Question And Answers
+          desc: Most Common And Important Answer
+          questions:
+              what_classlive: What is ClassLive?
+              sign_in_instructor: Can I sign up as an instructor if I am not affiliated with an institution?
+              registration: Do I have to pay for registration?
+              take_more_live_class: Can instructors take more than one live class?
+              whole_session: How do I share the class recording?
+          answers:
+              what_classlive: Classlive, a system for online learning, offers you the option to take live classes and record them for the benefit of the students
+              sign_in_instructor: "ClassLive welcomes instructors from all backgrounds. We do have a package for “individual instructor” and it’s free!."
+              registration: ClassLive offers free registrations to educators. There are three plans for Classlive members. Please Contact Us for more details  
+              take_more_live_class: ClassLive offers unlimited calls, without any call duration.
+              whole_session: Once the recording is complete, the instructor can directly upload the video or mail them to their respective peers.
   info_update_success: Information successfully updated.
   invalid_credentials: The email and password you entered did not match our records. Try again or click Forgot Password to reset your password.
   invalid_login_method: Login failed due to account mismatch. You need to log in with omniauth.
@@ -259,11 +422,15 @@ en:
     search:
       start: Start searching...
   landing:
-    about: "ClassLive, a system for online learning offers you the option to take live classes and record them for the benefit of students."
-    welcome: Engage Your Online Students
+    about: "Class Live offers Online Meeting Rooms to conduct  live classes and meetings. Meet & engage your peers LIVE, use whiteboard and share resource materials. Record the sessions in your personal Dashboard!"
+    welcome: Classes & Meetings LIVE now
+    join_in_meeting: Join in demo Meeting
+    join_in_meeting_desc: Someone Invite you to Join in a demo Meeting, Just input your Name and Join
     video: Watch our tutorial on using ClassLive
     upgrade: Show me how to upgrade to 2.0!
     version: We've released a new version of Greenlight, but your database isn't compatible.
+    join_now: Join Now
+    join_it_free: Join, its free
   language_default: Default (browser language)
   ldap_error: Unable to connect to the LDAP server. Please check your LDAP configuration in the env file and ensure your server is running.
   login: Sign in
@@ -323,6 +490,9 @@ en:
   max_concurrent: The maximum number of concurrent sessions allowed has been reached!
   merged: Merged
   modal:
+    save_mail_info: 
+        title: Email Saved
+        desc: Your mail is successfully saved to our database, We will contact you shortly
     create_role:
       create: Create a new Role
       footer_text: You can edit the individual permissions for this role after you've created it
@@ -464,6 +634,9 @@ en:
     deleted: Deleted
     pending: Pending
     user: User
+    free: Free
+    paid: Paid
+    all: All
   room:
     access_code_required: Please enter a valid access code to join the room
     create_room: Create a Room
@@ -536,7 +709,7 @@ en:
   signup:
     password_confirm: Password Confirmation
     subtitle: Create an Account
-    title: Join a Session
+    title: Become a member!
     with: Sign up with %{provider}
   terms:
     accept: I accept the %{href}

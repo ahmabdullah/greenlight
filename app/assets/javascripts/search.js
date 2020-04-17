@@ -62,7 +62,11 @@ $(document).on('turbolinks:load', function(){
       })
     }
   }
-})
+});
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
 
 // Searches the user table for the given string
 function searchPage() {
@@ -73,6 +77,22 @@ function searchPage() {
   var tab = new URL(location.href).searchParams.get('tab')
 
   var url = window.location.pathname + "?page=1&search=" + search
+
+  if (role) { url += "&role=" + role } 
+  if (tab) { url += "&tab=" + tab } 
+
+  window.location.replace(addRecordingTable(url));
+}
+
+// Searches the user table for the given string
+function filterRooms() {
+  var search = $("#status-room-select").val();
+
+  // Check if the user filtered by role
+  var role = new URL(location.href).searchParams.get('role')
+  var tab = new URL(location.href).searchParams.get('tab')
+
+  var url = window.location.pathname + "?page=1&status_room=" + search
 
   if (role) { url += "&role=" + role } 
   if (tab) { url += "&tab=" + tab } 

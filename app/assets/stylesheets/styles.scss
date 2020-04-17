@@ -12,7 +12,7 @@ ul{
 }
 body{
 	background: #EEF3FA;
-	font-family: 'Roboto', sans-serif !important;
+	font-family: 'Roboto', sans-serif;
 }
 .main_area{
 	padding: 0px
@@ -39,12 +39,12 @@ body{
 	display: inline-block;
 }
 .header_menu nav ul li a{
-    padding: 10px 16px 10px 16px !important;
+	padding: 10px 16px 10px 16px !important;
     display: table;
     font-size: 12px;
     text-decoration: none;
     color: #29363B;
-    font-weight: 510;
+    font-weight: 500;
 }
 .login_area{
     float: left;
@@ -63,27 +63,20 @@ body{
     font-size: 12px;
     text-decoration: none;
     color: #29363B;
-    font-weight: 700;
+    font-weight: 500;
 }
 .login_area ul li:first-child a{
     padding-left: 0px !important;
     color: #D23034;
-}
-.login_area ul li:first-child a::after {
-    content: "";
-    width: 1px;
-    height: 65px;
-    background: #ddd;
-    position: absolute;
-    top: -18px;
-    left: 38%;
+    border-right: 1px solid #ddd;
 }
 /* header css end*/
 #slider_area{
-    width: 100%;
-    background-image: url('img/header_bg.webp');
-    background-size: cover;
+    background-image: image-url('header_bg.png');
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100% !important;
+
 }
 .slider_content{
     padding-top: 120px;
@@ -96,9 +89,9 @@ body{
     font-weight: 700;
 }
 .slider_content p{
-    font-size: 13px;
+    font-size: 14px;
     margin-top: 25px;
-    color: #000;
+    color: #29363B;
     padding-right: 38px;
 }
 .join_area input{
@@ -129,4 +122,529 @@ body{
     font-size: 12px;
     padding: 6px 10px;
     color: #fff;
+    font-weight: 700;
+}
+
+/*=========================================
+===============Features css start==========*/
+#features_area{
+    background-color: #F9F9F9;
+    padding-top: 60px;
+    padding-bottom: 25px;
+}
+.row_modify{
+    margin-left: -60px;
+    margin-right: -60px;
+}
+.features_title h3{
+    font-size: 40px;
+    color: #D23034;
+    font-weight: 400;
+    margin-bottom: 46px;
+}
+.features_icon img{
+    width: 100%;
+}
+.features_content h6{
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #29363B;
+}
+.features_content p{
+    font-size: 13px;
+    color: #929699;
+}
+.learn_more{
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+.learn_more button{
+    border: none;
+    background-color: #29363B;
+    color: #fff;
+    font-size: 13px;
+    padding: 6px 20px;
+    font-weight: 600;
+}
+.learn_more button:hover{
+    background-color: #CC2A31;
+    cursor: pointer;
+}
+
+/*================================
+================price section css start======================
+==================================*/
+#price_plan_area{
+    background-image: image-url('pricing_plan_bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100% !important;
+    padding-top: 25px;
+    padding-bottom: 50px;
+}
+.plan_title h4{
+    font-size: 36px;
+    font-weight: 300;
+    color: #727272;
+    margin-bottom: 50px;
+}
+.price{
+    border: 1px solid #dddd;
+    padding: 20px 0px;
+    border-radius: 15px;
+    min-height: 560px;
+}
+.price p{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 300;
+    color: #29363B;
+}
+.price h2{
+    font-size: 35px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 7px;
+    margin-bottom: 2px;
+    font-weight: 900;
+}
+.price ul{
+    list-style: none;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 28px;
+    margin-bottom: 24px;
+}
+.price ul li span{
+    background-color: #C62530;
+    border-radius: 50%;
+    padding: 0px 3px 1px 3px;
+    margin-right: 8px;
+}
+.price ul li span i{
+    color: #fff;
+    font-size: 8px;
+    font-weight: 700;
+}
+.subcrip{
+    font-size: 13px !important;
+    font-weight: 300;
+}
+.price ul li{
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    line-height: 20px;  
+}
+.p_disable{
+    color: #BEC3C6 !important;
+    margin-left: 20px;
+}
+.price button{
+    background-color: #29363B;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 5px;
+}
+.price button:hover{
+    cursor: pointer;
+}
+
+
+.price1{
+    border: 1px solid #dddd;
+    padding: 20px 0px;
+    border-radius: 15px;
+    background-color: #E9453B;
+    min-height: 560px;
+}
+.price1 p{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 300;
+    color: #fff;
+}
+.price1 h2{
+    font-size: 35px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 7px;
+    margin-bottom: 2px;
+    font-weight: 900;
+    color: #fff
+}
+.price1 ul{
+    list-style: none;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 28px;
+    margin-bottom: 24px;
+}
+.price1 ul li span{
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 0px 3px 1px 3px;
+    margin-right: 8px;
+}
+.price1 ul li span i{
+    color: #C62530;
+    font-size: 8px;
+    font-weight: 700;
+}
+.subcrip1{
+    font-size: 11px !important;
+    font-weight: 300;
+}
+.price1 ul li{
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #fff;
+    line-height: 20px;  
+}
+.p_disable1{
+    color: #BEC3C6 !important;
+    margin-left: 20px;
+}
+.price1 button{
+    background-color: #D24F57;
+    border: 1px solid #ddd;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 6px 30px;
+    border-radius: 5px;
+}
+.price1 button:hover{
+    cursor: pointer;
+}
+.price3{
+    background-color: #fff !important;
+    border: 1px solid #ddd !important;
+    color: #000 !important;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 6px 30px !important
+}
+.price3_host{
+    margin-top: 12px !important;
+}
+
+/*==================================================
+=================================Get the limit the limitless area css start=======
+====================================================*/
+#limitless_area{
+    padding-top: 67px;
+    padding-bottom: 69px;
+    background-image: image-url('whyus_bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100% !important;
+    margin-bottom: 50px;
+}
+.limitless_row{}
+.limitless_content{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.limitless_content h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 26px;
+    font-weight: 300;
+    color: #EE9F9E;
+    margin-bottom: 20px;
+    line-height: 30px;
+}
+.limitless_sub_content{
+    margin-bottom: 8px;
+}
+.limitless_sub_content h6{
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 4px;
+}
+.limitless_sub_content p{
+    font-size: 13px;
+    color: #F0B8B7;
+    font-weight: 400;
+    padding: 0px 70px 0px 0px;
+    line-height: 15px;
+}
+.limitless_button{
+    border: 1px solid #ddd;
+    background: none;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    padding: 7px 14px 7px 5px;
+    border-radius: 24px;
+    margin-top: 14px;
+}
+.limitless_button:hover{
+    cursor: pointer;
+}
+.limitless_button i{
+    background: #fff;
+    padding: 0px 0px 0px 4px;
+    color: red;
+    width: 17px !important;
+    height: 17px;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 17px;
+}
+.demo_img img{
+    width: 100%;
+    float: left;
+    margin-left: -26px;
+    margin-top: 38px;
+}
+
+/*================================================
+==============================contact area css start==========
+=================================================*/
+
+#contact_area{
+    margin-bottom: 75px;
+}
+.contact h2{
+    font-size: 30px;
+    color: #29363B;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.contact p{
+    font-size: 15px;
+    color: #626768;
+    font-weight: 300;
+    margin-bottom: 24px;
+}
+.con_ans{
+    font-size: 15px !important;
+    color: #626768 !important;
+    font-weight: 300 !important;
+    margin-bottom: 24px !important;
+    margin-left: 0px !important;
+}
+.form_area input{
+    width: 100%;
+    border: 1px solid #F1F1F1;
+    margin-bottom: 18px;
+    padding: 8px 12px;
+    height: 36px;
+    font-size: 14px;
+}
+.form_area textarea{
+    width: 100%;
+    border: 1px solid #F1F1F1;
+    margin-bottom: 18px;
+    padding: 8px 12px;
+    font-size: 13px;
+}
+.form_area button{
+    background: #D02F33;
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    padding: 6px 31px;
+}
+.contact1 ul{
+    list-style: none;
+}
+.contact1 h2{
+    font-size: 30px;
+    color: #29363B;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.contact1 p{
+    font-size: 14px;
+    color: #929699;
+    margin-top: 11px;
+    margin-bottom: -8px;
+    display: table;
+    margin-left: 30px;
+}
+.a_count{
+    background: #D83535;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    padding: 4px 8px 4px 8px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    margin-right: 8px;
+    display: table;
+    float: left;
+}
+
+.panel{
+    display: table;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.contact1 .panel-title ul li h4{
+    font-size: 16px;
+    font-weight: 300;
+    color: #626768;
+}
+.contact1 .panel-title ul li h4:hover{
+    border-bottom: none;
+}
+
+/*=======================================================
+====================================footer area css start
+=========================================================*/
+
+#footer_area{
+
+}
+.s_main_area{
+    background-color: #D02F33;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.subscribe_content{
+    padding: 28px 0px 18px 26px;
+}
+.subscribe_content h4{
+    font-size: 25px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+.subscribe_content p{
+    font-size: 14px;
+    color: #F2CECE;
+    font-weight: 300;
+    padding: 0px 70px 0px 0px;
+    line-height: 15px;
+    margin-bottom: 15px;
+    line-height: 20px;
+}
+.email_area input{
+    border: none;
+    height: 42px;
+    font-size: 15px;
+    padding: 0px 0px 0px 14px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 20px;
+    position: relative;
+    margin-top: 50px;
+}
+.email_area button{
+    position: absolute;
+    top: 54px;
+    right: 19px;
+    border: none;
+    background: #29363B;
+    color: #fff;
+    font-size: 12px;
+    padding: 8px 28px 8px 28px;
+    border-radius: 17px;
+}
+.footer_content_area{}
+.footer_contents{
+    background-image: image-url('footer_bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100% !important;
+}
+.footer_content{
+    margin-left: -46px;
+    margin-right: -46px;
+    margin-top: 45px;
+}
+.footer_logo img{
+    width: 40%;
+}
+.footer_logo p{
+    font-size: 13px;
+    margin-top: 15px;
+    color: #6a6565;
+    padding-right: 38px;
+    margin-bottom: 15px;
+}
+.footer_logo ul{
+    list-style: none;
+}
+.footer_logo ul li{
+    display:inline-block;
+}
+.footer_logo ul li a{
+    border: 1px solid #000;
+    padding: 1px 7px 2px 7px;
+    margin-right: 9px;
+}
+.footer_logo ul li a i{
+    font-size: 12px;
+    color: #000;
+}
+.footer_logo ul li a:hover i{
+    color: #D02F33;
+}
+.footer_menu{}
+.footer_menu h6{
+    font-size: 16px;
+    font-weight: 400;
+    color: #29363B;
+    margin-bottom: 25px;
+}
+.footer_menu ul{
+    list-style: none;
+}
+.footer_menu ul li a{
+    color: #6a6565;
+    font-size: 13px;
+    line-height: 20px;
+    display: table;
+    text-decoration: none;
+}
+.footer_menu ul li a:hover{
+    color: #D02F33;
+}
+.contact_email{
+    margin-bottom: 8px;
+}
+.contact_email>p{
+    color: #6a6565;
+    font-size: 13px;
+    line-height: 20px;
+}
+.contact_email i{
+    font-size: 14px;
+    margin-right: 6px;
+    color: #D02F33;
+}
+.contact_phone>a{
+    margin-bottom: 5px;
+}
+.contact_phone i{
+    float: left;
+    font-size: 12px;
+    margin-right: 6px;
+    color: #D02F33;
+}
+.footer_bottom_content p{
+    font-size: 13px;
+    color: #6a6565;
+    padding-right: 38px;
+    border-top: 1px solid #ddd;
+    padding: 25px 0px;
+    margin-top: 18px;
+}
+
+/*=====================================
+==========================more features==================
+=======================================*/
+.more_features,.button-2{
+    display: none;
 }

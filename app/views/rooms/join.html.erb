@@ -31,6 +31,14 @@
     <% end %>
   <% else %>
     <%= form_for room_path(@room), method: :post do |f| %>
+      <%
+        placeholder = 'enter_your_name'
+        unless ENV['CLASSLIVE_CURRENT_TARGET_DOMAIN'].nil?
+          if ENV['CLASSLIVE_CURRENT_TARGET_DOMAIN'].to_s == 'bncd'
+            placeholder = ENV['CLASSLIVE_CURRENT_TARGET_DOMAIN'].to_s + '_enter_your_name'
+          end
+        end
+      %>
       <div class="input-group">
         <%= f.hidden_field(:search, :value => params[:search])%>
         <%= f.hidden_field(:column, :value => params[:column])%>
@@ -38,7 +46,7 @@
         <%= f.text_field :join_name,
             required: true,
             class: "form-control join-form",
-            placeholder: t("enter_your_name"),
+            placeholder: t(placeholder),
             value: "#{@name}",
             readonly: !current_user.nil?, 
             autofocus: true

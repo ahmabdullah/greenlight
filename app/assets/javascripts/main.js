@@ -14,6 +14,22 @@
 // You should have received a copy of the GNU Lesser General Public License along
 // with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
 
+$(document).ready(function () {
+	/*$('.more_features').hide('3000');
+	$('.button-2').hide();*/
+
+	$('.button-1').click(function(){
+		$('.more_features').show('3000');
+		$(this).hide();
+		$('.button-2').show('3000');
+	})
+
+	$('.button-2').click(function(){
+		$('.more_features').hide('3000');
+		$('.button-1').show('3000');
+		$(this).hide();
+	});
+});
 $(document).on('turbolinks:load', function(){
   $.rails.refreshCSRFTokens();
 })

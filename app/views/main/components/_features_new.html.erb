@@ -13,130 +13,214 @@
 # with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
 %>
 
-<div class="bbb-features container mt-8 mb-6 text-center">
-	<div class='row'>
-	  <div class="col-md-12">
-		<div class='featurette-heading'>
-		  <h2 class="mb-6"><%= t("features.title") %></h2>
-		</div>
-	  </div>
-	</div>
-	
-	<div class='row'>
-		<div class='span four first'>
-		  <i class="fa fa-play-circle"></i>
-
-		  <div class="bbb-features-content">
-			<h3><a href="">Record and Playback</a></h3>
-			<p>Classlive can record your sessions for later playback by students.</p>
-		  </div>
-		</div>
-
-		<div class='span four'>
-		  <i class="fa fa-pen-square"></i>
-
-		  <div class="bbb-features-content">
-			<h3><a href="">Whiteboard</a></h3>
-			<p>The whiteboard controls let you annotate key parts of your presentation.</p>
-		  </div>
-		</div>
-
-		<div class='span four last'>
-		  <i class="fa fa-desktop"></i>
-
-		  <div class="bbb-features-content">
-			<h3><a href="">Screen Sharing</a></h3>
-			<p>You can broadcast your desktop for all users to see.</p>
-		  </div>
-		</div>
-	</div>
-
-
-	<div class='row'>
-		<div class='span four first'>
-		  <i class="fa fa-microphone"></i>
-
-		  <div class="bbb-features-content">
-			<h3><a href="">Audio</a></h3>
-			<p>Users of Chrome and FireFox browsers will benefit from high-quality, low-latency WebRTC audio.</p>
-		  </div>
-		</div>
-
-		<div class='span four'>
-		  <i class="fa fa-chart-bar"></i>
-
-		  <div class="bbb-features-content">
-			<h3><a href="">Presentation</a></h3>
-			<p>You can upload any PDF presentation or MS office document. Classlive keeps everyone in sync with your current slide, zoom, pan, annotations, and mouse pointer.</p>
-		  </div>
-		</div>
-
-		<div class='span four last'>
-		  <i class="fa fa-video"></i>
-
-		  <div class="bbb-features-content">
-			<h3><a href="">Webcam</a></h3>
-			<p>Multiple users can share their webcam at the same time. There is no built-in limit on the number of simultaneously active webcams.</p>
-		  </div>
-		</div>
-	</div>
-
-	<div class='row'>
-	  <div class='span four first'>
-		<i class="fa fa-smile-beam"></i>
-
-		<div class="bbb-features-content">
-		  <h3><a href="">Emoji</a></h3>
-		  <p>Students can raise hand and use emoji icons for feedback.</p>
-		</div>
-	  </div>
-
-	  <div class='span four'>
-		<i class="fa fa-check-square"></i>
-
-		<div class="bbb-features-content">
-		  <h3><a href="">Polling</a></h3>
-		  <p>You can poll students anytime to increase engagement.</p>
-		</div>
-	  </div>
-
-	  <div class='span four last'>
-		<i class="fa fa-comments"></i>
-
-		<div class="bbb-features-content">
-		  <h3><a href="">Chat</a></h3>
-		  <p>You can interact with students through public and private chat.</p>
-		</div>
-	  </div>
-	</div>
-
-	<div class='row'>
-	  <div class='span four first'>
-		<i class="fa fa-closed-captioning"></i>
-
-		<div class="bbb-features-content">
-		  <h3><a href="">Live Captioning</a></h3>
-		  <p>You can enter live captions for students.  These captions will later appear as subtitles in recordings.</p>
-		</div>
-	  </div>
-
-	  <div class='span four'>
-		<i class="fa fa-users"></i>
-
-		<div class="bbb-features-content">
-		  <h3><a href="">Breakout Rooms</a></h3>
-		  <p>You can group and place students into breakout rooms (full Classlive sessions) for give number of minutes for increased collaboration.</p>
-		</div>
-	  </div>
-
-	  <div class='span four last'>
-		<i class="fa fa-blind"></i>
-
-		<div class="bbb-features-content">
-		  <h3>Screen Reader</h3>
-		  <p>Students with visual disabilities can use JAWS screen reader to interact with Classlive.</p>
-		</div>
-	  </div>
-	</div>
-
+<div id="features_area">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 text-center">
+                <div class="features_title">
+                    <h3><%= t("features.head_title") %></h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="row f_content_area">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <div class="row">
+                            <div class="col-3 col-sm-4 col-md-3">
+                                <div class="features_icon">
+                                    <%= image_tag 'record.png' %>
+                                </div>
+                            </div>
+                            <div class="col-9 col-sm-8 col-md-9">
+                                <div class="features_content">
+                                    <h6><%= t("features.title.record_and_playback").html_safe %></h6>
+                                    <p><%= t("features.desc.record_and_playback_desc").html_safe %></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <div class="row">
+                            <div class="col-3 col-sm-4 col-md-3">
+                                <div class="features_icon">
+                                    <%= image_tag 'whiteboard.png' %>
+                                </div>
+                            </div>
+                            <div class="col-9 col-sm-8 col-md-9">
+                                <div class="features_content">
+                                    <h6><%= t("features.title.whiteboard").html_safe %></h6>
+                                    <p><%= t("features.desc.whiteboard_desc").html_safe %></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <div class="row">
+                            <div class="col-3 col-sm-4 col-md-3">
+                                <div class="features_icon">
+                                    <%= image_tag 'screen.png' %>
+                                </div>
+                            </div>
+                            <div class="col-9 col-sm-8 col-md-9">
+                                <div class="features_content">
+                                    <h6><%= t("features.title.screen_sharing").html_safe %></h6>
+                                    <p><%= t("features.desc.screen_sharing_desc").html_safe %></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <div class="row">
+                            <div class="col-3 col-sm-4 col-md-3">
+                                <div class="features_icon">
+                                    <%= image_tag 'audio.png' %>
+                                </div>
+                            </div>
+                            <div class="col-9 col-sm-8 col-md-9">
+                                <div class="features_content">
+                                    <h6><%= t("features.title.audio").html_safe %></h6>
+                                    <p><%= t("features.desc.audio_desc").html_safe %></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <div class="row">
+                            <div class="col-3 col-sm-4 col-md-3">
+                                <div class="features_icon">
+                                    <%= image_tag 'presentation.png' %>
+                                </div>
+                            </div>
+                            <div class="col-9 col-sm-8 col-md-9">
+                                <div class="features_content">
+                                    <h6><%= t("features.title.presentation").html_safe %></h6>
+                                    <p><%= t("features.desc.presentation_desc").html_safe %></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <div class="row">
+                            <div class="col-3 col-sm-4 col-md-3">
+                                <div class="features_icon">
+                                    <%= image_tag 'webcam.png' %>
+                                </div>
+                            </div>
+                            <div class="col-9 col-sm-8 col-md-9">
+                                <div class="features_content">
+                                    <h6><%= t("features.title.webcam").html_safe %></h6>
+                                    <p><%= t("features.desc.webcam_desc").html_safe %></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--more features html start-->
+                <div class="more_features">
+                    <div class="row f_content_area mt-5">
+                        <div class="col-12 col-sm-6 col-md-4 mb-5">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-md-3">
+                                    <div class="features_icon">
+                                        <%= image_tag 'chat.png' %>
+                                    </div>
+                                </div>
+                                <div class="col-9 col-sm-8 col-md-9">
+                                    <div class="features_content">
+                                        <h6><%= t("features.title.chat").html_safe %></h6>
+                                        <p><%= t("features.desc.chat_desc").html_safe %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-md-3">
+                                    <div class="features_icon">
+                                        <%= image_tag 'attendance.png' %>
+                                    </div>
+                                </div>
+                                <div class="col-9 col-sm-8 col-md-9">
+                                    <div class="features_content">
+                                        <h6><%= t("features.title.attendance").html_safe %></h6>
+                                        <p><%= t("features.desc.attendance_desc").html_safe %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-md-3">
+                                    <div class="features_icon">
+                                        <%= image_tag 'breakout.png' %>
+                                    </div>
+                                </div>
+                                <div class="col-9 col-sm-8 col-md-9">
+                                    <div class="features_content">
+                                        <h6><%= t("features.title.breakout").html_safe %></h6>
+                                        <p><%= t("features.desc.breakout_desc").html_safe %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-md-3">
+                                    <div class="features_icon">
+                                        <%= image_tag 'poll.png' %>
+                                    </div>
+                                </div>
+                                <div class="col-9 col-sm-8 col-md-9">
+                                    <div class="features_content">
+                                        <h6><%= t("features.title.poll").html_safe %></h6>
+                                        <p><%= t("features.desc.poll_desc").html_safe %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-md-3">
+                                    <div class="features_icon">
+                                        <%= image_tag 'emoji.png' %>
+                                    </div>
+                                </div>
+                                <div class="col-9 col-sm-8 col-md-9">
+                                    <div class="features_content">
+                                        <h6><%= t("features.title.emoji").html_safe %></h6>
+                                        <p><%= t("features.desc.emoji_desc").html_safe %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-md-3">
+                                    <div class="features_icon">
+                                        <%= image_tag 'caption.png' %>
+                                    </div>
+                                </div>
+                                <div class="col-9 col-sm-8 col-md-9">
+                                    <div class="features_content">
+                                        <h6><%= t("features.title.caption").html_safe %></h6>
+                                        <p><%= t("features.desc.caption_desc").html_safe %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--more features html start-->
+                <div class="row morebutton_area">
+                    <div class="col-12 col-sm-12 col-md-12 text-center">
+                        <div class="learn_more">
+                            <button class="button-1"><%= t("features.more") %></button>
+                            <button class="button-2"><%= t("features.less") %></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
 </div>

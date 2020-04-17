@@ -49,7 +49,38 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <!-- Primary color styling -->
-    <%#= stylesheet_link_tag themes_primary_path %>
+    <%= stylesheet_link_tag themes_primary_path %>
+    
+    <style>
+    .header_menu nav ul li a{
+        color: #29363B !important;
+    }
+    .login_area ul li a{
+        color: #29363B !important;
+    }
+    .login_area ul li:first-child a{
+        color: #D23034 !important;
+    }
+    input:focus, select:focus {
+      box-shadow: 0 0 5px #CCC !important;
+      border-color: #eee !important; 
+    }
+    a:hover{
+        text-decoration: none !important;
+    }
+    .footer_menu ul li a {
+        color: #6a6565 !important;
+    }
+    .price1 a {
+        color: #F7EAEA !important;
+    }
+    .price3 {
+        color: #000 !important;
+    }
+    .svg-inline--fa.fa-w-6 {
+        width: auto;
+    }
+    </style>
 
     <script type="text/javascript">
       // Include the correct translated strings for Javascript

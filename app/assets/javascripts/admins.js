@@ -40,7 +40,13 @@ $(document).on('turbolinks:load', function(){
         $(this).addClass("selected")
 
         updateTabParams(this.id)
-      })
+      });
+      $(".manage-users-status").click(function() {
+        $(".manage-users-status").removeClass("selected")
+        $(this).addClass("selected")
+
+        updateStatusParams(this.id)
+      });
 
       $('.selectpicker').selectpicker({
         liveSearchPlaceholder: getLocalizedString('javascript.search.start')
@@ -147,6 +153,22 @@ function updateTabParams(tab) {
     search_params.set("tab", tab)
   } else {
     search_params.append("tab", tab)
+  }
+
+  search_params.delete("page")
+
+  window.location.search = search_params.toString()
+}
+
+function updateStatusParams(status) {
+  var search_params = new URLSearchParams(window.location.search)
+
+  if (window.location.href.includes("status=")) 
+  {
+    search_params.set("status", status)
+  } 
+  else {
+    search_params.append("status", status)
   }
 
   search_params.delete("page")

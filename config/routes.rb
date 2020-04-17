@@ -29,6 +29,10 @@ Rails.application.routes.draw do
   get '/signup', to: 'sessions#new', as: :signup
   post '/signup', to: 'users#create', as: :create_user
   get '/ldap_signin', to: 'sessions#ldap_signin', as: :ldap_signin
+  
+  post '/join_demo_meetings', to: 'rooms#start', as: :join_demo_meetings
+  post '/demo_meeting', to: 'main#demo_meeting', as: :demo_meeting
+  post '/mail_data_save', to: 'main#mail_data_save', as: :mail_data_save
 
   # Redirect to terms page
   match '/terms', to: 'users#terms', via: [:get, :post]
@@ -39,11 +43,14 @@ Rails.application.routes.draw do
   scope '/admins' do
     # Panel Tabs
     get '/rooms', to: 'admins#server_rooms', as: :admin_rooms
+    get '/email_contacts', to: 'admins#email_contacts', as: :admin_email_contacts
     get '/recordings', to: 'admins#server_recordings', as: :admin_recordings
     get '/site_settings', to: 'admins#site_settings', as: :admin_site_settings
     get '/roles', to: 'admins#roles', as: :admin_roles
     # Manage Users
     get '/edit/:user_uid', to: 'admins#edit_user', as: :admin_edit_user
+    post '/downgrade/:user_uid', to: 'admins#downgrade_user', as: :admin_downgrade
+    post '/upgrade/:user_uid', to: 'admins#upgrade_user', as: :admin_upgrade
     post '/ban/:user_uid', to: 'admins#ban_user', as: :admin_ban
     post '/unban/:user_uid', to: 'admins#unban_user', as: :admin_unban
     post '/invite', to: 'admins#invite', as: :invite_user
@@ -133,5 +140,18 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: 'main#index'
+  #
+  unless ENV['CLASSLIVE_CURRENT_TARGET_DOMAIN'].nil?
+    if ENV['CLASSLIVE_CURRENT_TARGET_DOMAIN'].to_s == 'bncd'
+      if ENV['SHOW_HOME_PAGE'].to_s == 'show'
+        root to: 'main#index'
+      else
+        root to: 'sessions#signin'
+      end
+    else
+      root to: 'main#index'
+    end
+  else
+    root to: 'main#index'
+  end
 end

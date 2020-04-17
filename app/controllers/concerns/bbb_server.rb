@@ -43,13 +43,35 @@ module BbbServer
   end
 
   # Returns a URL to join a user into a meeting.
+  def demo_join_path(meeting_name, user_name, options = {}, moderator_pw, attendee_pw)
+    # Create the meeting, even if it's running
+    if options[:user_is_moderator]
+      demo_start_session(meeting_name, options, moderator_pw, attendee_pw)
+    end
+    # Determine the password to use when joining.
+    password = options[:user_is_moderator] ? moderator_pw : attendee_pw
+    # Generate the join URL.
+    join_opts = {}
+    join_opts[:userID] = user_name if user_name
+    join_opts[:join_via_html5] = true
+    join_opts[:guest] = true if options[:require_moderator_approval] && !options[:user_is_moderator]
+    bbb_server.join_meeting_url(meeting_name, user_name, password, join_opts)
+  end
+  
+  # Returns a URL to join a user into a meeting.
   def join_path(room, name, options = {}, uid = nil)
     # Create the meeting, even if it's running
     start_session(room, options)
 
     # Determine the password to use when joining.
     password = options[:user_is_moderator] ? room.moderator_pw : room.attendee_pw
-
+    unless current_user.nil?
+      if current_user.has_role?(:super_admin)
+        options[:user_is_moderator] = true
+      elsif current_user.has_role?(:admin)
+        options[:user_is_moderator] = true
+      end
+    end
     # Generate the join URL.
     join_opts = {}
     join_opts[:userID] = uid if uid
@@ -59,45 +81,51 @@ module BbbServer
   end
 
   # Creates a meeting on the BigBlueButton server.
+  def demo_start_session(meeting_name, options = {}, moderator_pw, attendee_pw)
+    create_options = {
+      record: false.to_s,
+      logoutURL: options[:meeting_logout_url] || '',
+      moderatorPW: moderator_pw,
+      attendeePW: attendee_pw,
+      moderatorOnlyMessage: options[:moderator_message],
+      muteOnStart: options[:mute_on_start] || false,
+      duration: 30,
+      maxParticipants: 10,
+      "meta_#{META_LISTED}": options[:recording_default_visibility] || false,
+      "meta_bbb-origin-version": Greenlight::Application::VERSION,
+      "meta_bbb-origin": "Greenlight",
+      "meta_bbb-origin-server-name": options[:host]
+    }
+    
+
+    create_options[:guestPolicy] = "ASK_MODERATOR" if options[:require_moderator_approval]
+
+    # Send the create request.
+    begin
+      meeting = bbb_server.create_meeting(meeting_name, meeting_name, create_options)
+    rescue BigBlueButton::BigBlueButtonException => e
+      puts "BigBlueButton failed on create: #{e.key}: #{e.message}"
+      raise e
+    end
+  end
+  
+  # Creates a meeting on the BigBlueButton server.
   def start_session(room, options = {})
-    user_status = 2
-    #abort('here')
-    unless current_user.blank?
-      if current_user.status.blank?
-        user_status = 2
-      end
-    end
-    if user_status.to_i == 1
-      create_options = {
-        record: false.to_s,
-        logoutURL: options[:meeting_logout_url] || '',
-        moderatorPW: room.moderator_pw,
-        attendeePW: room.attendee_pw,
-        moderatorOnlyMessage: options[:moderator_message],
-        muteOnStart: options[:mute_on_start] || false,
-        duration: 40,
-        maxParticipants: 50,
-        "meta_#{META_LISTED}": options[:recording_default_visibility] || false,
-        "meta_bbb-origin-version": Greenlight::Application::VERSION,
-        "meta_bbb-origin": "Greenlight",
-        "meta_bbb-origin-server-name": options[:host]
-      }
-    else  
-      create_options = {
-        record: options[:meeting_recorded].to_s,
-        logoutURL: options[:meeting_logout_url] || '',
-        moderatorPW: room.moderator_pw,
-        attendeePW: room.attendee_pw,
-        moderatorOnlyMessage: options[:moderator_message],
-        muteOnStart: options[:mute_on_start] || false,
-        "meta_#{META_LISTED}": options[:recording_default_visibility] || false,
-        "meta_bbb-origin-version": Greenlight::Application::VERSION,
-        "meta_bbb-origin": "Greenlight",
-        "meta_bbb-origin-server-name": options[:host]
-      }
-    end
-    #abort(current_user.inspect)
-    #abort('here ' + options[:meeting_recorded].to_s)
+    create_options = {
+      record: options[:meeting_recorded].to_s,
+      logoutURL: options[:meeting_logout_url] || '',
+      moderatorPW: room.moderator_pw,
+      attendeePW: room.attendee_pw,
+      moderatorOnlyMessage: options[:moderator_message],
+      muteOnStart: options[:mute_on_start] || false,
+      allowModsToUnmuteUsers: true,
+      lockSettingsDisableCam: true,
+      #lockSettingsDisableMic: true,
+      "meta_#{META_LISTED}": options[:recording_default_visibility] || false,
+      "meta_bbb-origin-version": Greenlight::Application::VERSION,
+      "meta_bbb-origin": "Greenlight",
+      "meta_bbb-origin-server-name": options[:host]
+    }
     
 
     create_options[:guestPolicy] = "ASK_MODERATOR" if options[:require_moderator_approval]

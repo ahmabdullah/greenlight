@@ -36,14 +36,33 @@
                                       
                                       <% if current_user.highest_priority_role.get_permission("can_create_rooms") %>
                                         <% all_rec_page = params[:controller] == "users" && params[:action] == "recordings" ? "active" : "" %>
+                                        <%
+                                        user_status = 1
+                                        #abort('here')
+                                        unless current_user.blank?
+                                          if current_user.status.blank?
+                                            user_status = 2
+                                          else
+                                            user_status = current_user.status
+                                          end
+                                        end
+                                        %>
+                                        <% if user_status == 2 %>
                                         <li><%= link_to t("header.all_recordings"), get_user_recordings_path(current_user) %></li>
+                                        <% end %>
                                       <% end %>
                                   <% end %>
+                                <% else %>
+                                  <% if params[:controller].to_s == "main" and params[:action].to_s == "index" %>        
+                                  <li><%= link_to t("header.dropdown.home"), root_path %></li>
+                                  <% end %>
                                 <% end %>
-                                <li><a href="#">Features</a></li>
-                                <li><a href="#">Plan & Price</a></li>
-                                <li><a href="#">Why Use</a></li>
-                                <li><a href="#">Contact Us</a></li>
+                                <% if params[:controller].to_s == "main" and params[:action].to_s == "index" %>  
+                                <li><a href="#features_area"><%= t("header.dropdown.features") %></a></li>
+                                <li><a href="#price_plan_area"><%= t("header.dropdown.plan_n_price") %></a></li>
+                                <li><a href="#limitless_area"><%= t("header.dropdown.why_us") %></a></li>
+                                <li><a href="#contact_area"><%= t("header.dropdown.contact_us") %></a></li>
+                                <% end %>
                             </ul>
                         </nav>
                     </div>

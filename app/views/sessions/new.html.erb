@@ -14,9 +14,24 @@
 %>
 
 <div class="container">
+   <%
+      sign_in_type_main = true
+    show_school_info = false
+    unless ENV['CLASSLIVE_CURRENT_TARGET_DOMAIN'].nil?
+      if ENV['CLASSLIVE_CURRENT_TARGET_DOMAIN'].to_s == 'bncd'
+        sign_in_type_main = false
+        if ENV['SHOW_SCHOOL_INFO'].to_s == 'show'
+          show_school_info = true
+        end
+      end
+    end
+  %>   
   <div class="row pt-7">
+    <% if show_school_info %>  
+    <h1 class="school_name"><%= image_tag(ENV['CLASSLIVE_CURRENT_TARGET_DOMAIN'].to_s + '_logo.png', id: "school-image", class: "school-image") %><%= t(ENV['CLASSLIVE_CURRENT_TARGET_DOMAIN'].to_s + ".school_name") %></h1>  
+    <% end %>  
     <div class="col col-lg-6 offset-lg-3">
-      <div class="card">
+      <div class="card background" style="border: 1px solid #eee;">
         <div class="card-header background">
           <h4 class="mt-2"><%= t("signup.subtitle") %></h4>
         </div>
@@ -69,7 +84,7 @@
                 <div class="invalid-feedback d-block"><%= @user.errors.full_messages_for(:accepted_terms).first %></div>
               </div>
             <% end %>
-            <div class="card-footer px-0 pb-0">
+            <div class="card-footer px-0 pb-0" style="text-align: center;">
               <% if recaptcha_enabled? %>
                 <div class="form-group">
                   <%= recaptcha_tags %>

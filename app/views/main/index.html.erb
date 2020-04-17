@@ -18,28 +18,48 @@
 	  border-color: #CCC !important; 
 	}
 </style>
-<div id="slider_area" style="background-image: url('/header_bg.webp');">
+<div id="slider_area">
     <div class="row">
-        <div class="col-2 col-sm-2 col-md-2"></div>
-        <div class="col-4 col-sm-4 col-md-4">
+        <div class="col-0 col-sm-1 col-md-1"></div>
+        <div class="col-7 col-sm-6 col-md-5">
                 <div class="slider_content">
+                        <% unless @meeting.blank? and !@room_running %>
+                        <h1><%= t("landing.join_in_meeting").html_safe %></h1>
+                        <p><%= t("landing.join_in_meeting_desc").html_safe %></p>
+                        <% else %>
                         <h1><%= t("landing.welcome").html_safe %></h1>
                         <p><%= t("landing.about").html_safe %></p>
+                        <% end %>
                         <div class="row join_area">
-                            <form name="form1" method="GET" action="/demo/demoHTML5.jsp" style="width: 100%;">
+                                <%= form_with(url: "/demo_meeting", method: "POST", local: true, :html => { :style => 'width: 100%;' }) do %>
                                   <input type="hidden" name="action" value="create">
                                   <div class="col-8 col-sm-8 col-md-8 pr-0" style="display:inline-block;">
                                       <input type="username" name="username" placeholder="Enter Your Name">
                                   </div>
+                                  <% unless @meeting.blank? and !@room_running %>
+                                  <input type="hidden" name="meetingname" value="<%= @meeting %>">
+                                  <input type="hidden" name="join_type" value="0">
                                   <div class="col-4 col-sm-4 col-md-4 pl-0" style="display:inline-block; width: 30%;">
-                                      <button type="submit">Joins, it free</button>
+                                      <button type="submit"><%= t("landing.join_now").html_safe %></button>
                                   </div>
-                              </form>
+                                  <% else %>
+                                  <input type="hidden" name="join_type" value="1">
+                                  <div class="col-4 col-sm-4 col-md-4 pl-0" style="display:inline-block; width: 30%;">
+                                      <button type="submit"><%= t("landing.join_it_free").html_safe %></button>
+                                  </div>
+                                  <% end %>
+                              <% end %>
                         </div>
                 </div>
         </div>
-        <div class="col-6 col-sm-6 col-md-6"></div>
+        <div class="col-5 col-sm-6 col-md-6"></div>
     </div>
 </div>
 
 <%= render "main/components/features_new" %>
+<% unless current_user %>
+<%= render "main/components/price_plan" %>
+<% end %>
+<%= render "main/components/limitless_area" %>
+<%= render "main/components/contact" %>
+<%= render "main/components/home_footer" %>

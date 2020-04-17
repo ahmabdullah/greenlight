@@ -13,6 +13,14 @@
 # with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
 %>
 
+<div id="filter-room-status">
+    <label>Status</label>
+    <select id="status-room-select" onchange="filterRooms()">
+        <option value="0" <%= (@status_room.to_i == 0) ? 'selected' : '' %>>All</option>
+        <option value="1" <%= (@status_room.to_i == 1) ? 'selected' : '' %>>Running</option>
+        <option value="2" <%= (@status_room.to_i == 2) ? 'selected' : '' %>>Not Running</option>
+    </select>
+</div>
 <div class="row">
   <div class="col-12">
     <div class="table-responsive">
@@ -50,8 +58,12 @@
           </tr>
         </thead>
         <tbody id="rooms-table">
+          <% unless @rooms.blank? %>  
           <% @rooms.each do |room| %>
             <%= render "admins/components/server_room_row", room: room %>
+          <% end %>
+          <% else %>
+            <tr><td colspan="5" style="text-align: center;">No Room Found</td></tr>
           <% end %>
         </tbody>
       </table>

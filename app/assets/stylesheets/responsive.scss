@@ -1,143 +1,585 @@
-// BigBlueButton open source conferencing system - http://www.bigbluebutton.org/.
-//
-// Copyright (c) 2018 BigBlueButton Inc. and by respective authors (see below).
-//
-// This program is free software; you can redistribute it and/or modify it under the
-// terms of the GNU Lesser General Public License as published by the Free Software
-// Foundation; either version 3.0 of the License, or (at your option) any later
-// version.
-//
-// BigBlueButton is distributed in the hope that it will be useful, but WITHOUT ANY
-// WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-// PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
-//
-// You should have received a copy of the GNU Lesser General Public License along
-// with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
-
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 430px) { 
-	body{
-		background: red;
+	/*header area css start*/
+	.header_logo {
+	    text-align: center;
 	}
-	#login_panel {
-    	margin-left: 0px;
+	.header_logo img{
+	    float: none;
 	}
-	#registration_panel {
-    	margin-left: 0px;
+	.header_logo {
+	    text-align: center;
+	    margin-bottom: 15px;
 	}
-	.form_control{
-		margin-left: 30px !important;
-		margin-right: 30px !important;
+	.header_menu nav ul li a {
+	    padding: 10px 1px 12px 5px !important;
+		font-size: 10px;
 	}
-	.l_forgot {
-    	margin-left: 0px;
-    	float: inherit;
+	.login_area {
+	    float: none;
 	}
-	.l_login_button {
-    	margin-right: 0px;
-    	float: inherit;
+	.login_area ul li a {
+	    padding: 4px 11px 10px 5px !important;
+	    padding-left: 5px;
+	    font-size: 10px;
 	}
-	.f_top{
-		display: none;
+	.login_area ul li:first-child a::after {
+	    content: "";
+	    width: 0px;
+	    height: 0px;
 	}
-	.f_down{
-    	display: block;
+	/*slider css start*/
+	.slider_content {
+		padding-top: 42px;
+		padding-bottom: 28px;
+		padding-left: 11px;
+		padding-right: 10px;
 	}
+	.slider_content h1 {
+		font-size: 16px;
+	}
+	.slider_content p {
+	    font-size: 11px;
+	    margin-top: 6px;
+	    padding-right: 0;
+	}
+	.join_area {
+	    margin-top: 16px;
+	}
+	.join_area button {
+	    font-size: 10px;
+	    padding: 8px 1px;
+	}
+	/*features css start*/
+	#features_area {
+	    padding-top: 36px;
+	    padding-left: 20px;
+		padding-right: 20px;
+	}
+	.row_modify {
+	    margin-left: 15px;
+	    margin-right: 15px;
+	}
+	.f_content_area>div{
+		margin-bottom: 20px !important;
+	}
+	.learn_more {
+	    margin-top: 30px;
+	    margin-bottom: 22px;
+	}
+	/*price plan css start*/
+	#price_plan_area {
+    	padding-bottom: 0px;
+    	padding-left: 20px;
+		padding-right: 20px;
+	}
+	.plan_title h4 {
+	    font-size: 18px;
+	    margin-bottom: 39px;
+	}
+	.price {
+	    margin-bottom: 17px;
+	}
+	.price1 {
+	    margin-bottom: 17px;
+	}
+	/*limitless area css start*/
+	.demo_img img {
+	    width: 75%;
+	    margin-left: calc(75% - 60%);
+	}
+	.limitless_content{
+		text-align: center;
+	}
+	.limitless_content h2 {
+	    font-size: 22px;
+	}
+	.limitless_sub_content p {
+	    padding: 0px 0px 0px 0px;
+	}
+	#limitless_area {
+    	padding-bottom: 103px;
+    	padding-left: 20px;
+		padding-right: 20px;
+	}
+	/*contact css start*/
+	#contact_area{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.contact{
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	.contact1 h2 {
+	    font-size: 21px;
+	    text-align: center;
+	}
+	/*footer area css start*/
+	#footer_area {
+	    padding-left: 20px;
+	    padding-right: 20px;
+	}
+	.subscribe_content{
+		text-align: center;
+	}
+	.subscribe_content h4 {
+	    font-size: 20px;
+	}
+	.subscribe_content p {
+	    font-size: 12px;
+	    padding: 0px 0px 0px 0px;
+	    margin-bottom: 0px;
+	}
+	.subscribe_content {
+    	padding: 13px 0px 0px 0px;
+	}
+	.email_area input {
+	    margin-top: 10px;
+	    margin-top: 25px;
+	    margin-bottom: 13px;
+	}
+	.email_area button {
+	    top: 29px;
+	}
+	.footer_content {
+	    margin-left: 20px;
+	    margin-right: 20px;
+	    margin-top: 45px;
+	    text-align: center;
+	}
+	.footer_menu ul li a {
+	    display: block;
+	}
+	.footer_logo p {
+	    padding-right: 0px;
+	}
+	.contact_phone i {
+	    float: none;
+	}
+	.footer_logo{
+		margin-bottom: 18px;
+	}
+	.footer_menu h6 {
+	    margin-bottom: 10px;
+	}
+	.footer_menu {
+    	margin-bottom: 18px;
+	}
+
 }
 
 @media (min-width: 431px) and (max-width: 575px) { 
-	body{
-		background: green;
+	/*header area css start*/
+	/*header area css start*/
+	.header_logo {
+	    text-align: center;
 	}
-	#login_panel {
-    	margin-left: 0px;
+	.header_logo img{
+	    float: none;
 	}
-	#registration_panel {
-    	margin-left: 0px;
+	.header_logo {
+	    text-align: center;
+	    margin-bottom: 15px;
 	}
-	.form_control{
-		margin-left: 30px !important;
-		margin-right: 30px !important;
+	.header_menu nav ul li a {
+	    padding: 10px 3px 12px 5px !important;
+		font-size: 13px;
 	}
-	#login_panel .level img {
-    	padding-top: 16%;
-    	width: 30%;
+	.login_area {
+	    float: none;
 	}
-	.l_forgot {
-    	margin-left: 0px;
-    	float: inherit;
+	.login_area ul li a {
+	    padding: 4px 11px 10px 5px !important;
+	    padding-left: 5px;
+	    font-size: 13px;
 	}
-	.l_login_button {
-    	margin-right: 0px;
-    	float: inherit;
+	.login_area ul li:first-child a::after {
+	    content: "";
+	    width: 0px;
+	    height: 0px;
 	}
-	.f_down{
-    	display: block;
+	/*slider css start*/
+	.slider_content {
+		padding-top: 42px;
+		padding-bottom: 28px;
+		padding-left: 11px;
+		padding-right: 10px;
 	}
-	.f_top{
-		display: none;
+	.slider_content h1 {
+		font-size: 16px;
 	}
-	.level img {
-    	padding-top: 11%;
-    	width: 26%;
+	.slider_content p {
+	    font-size: 11px;
+	    margin-top: 6px;
+	    padding-right: 0;
 	}
-	.l_class img {
-    	padding-top: 8px;
-		width: 22%;
+	.join_area {
+	    margin-top: 16px;
 	}
+	.join_area button {
+	    font-size: 10px;
+	    padding: 8px 1px;
+	}
+	/*features css start*/
+	#features_area {
+	    padding-top: 36px;
+	    padding-left: 20px;
+		padding-right: 20px;
+	}
+	.row_modify {
+	    margin-left: 15px;
+	    margin-right: 15px;
+	}
+	.f_content_area>div{
+		margin-bottom: 20px !important;
+	}
+	.learn_more {
+	    margin-top: 30px;
+	    margin-bottom: 22px;
+	}
+	/*price plan css start*/
+	#price_plan_area {
+    	padding-bottom: 0px;
+    	padding-left: 20px;
+		padding-right: 20px;
+	}
+	.plan_title h4 {
+	    font-size: 18px;
+	    margin-bottom: 39px;
+	}
+	.price {
+	    margin-bottom: 17px;
+	}
+	.price1 {
+	    margin-bottom: 17px;
+	}
+	/*limitless area css start*/
+	.demo_img img {
+	    width: 75%;
+	    margin-left: calc(75% - 60%);
+	}
+	.limitless_content{
+		text-align: center;
+	}
+	.limitless_content h2 {
+	    font-size: 22px;
+	}
+	.limitless_sub_content p {
+	    padding: 0px 0px 0px 0px;
+	}
+	#limitless_area {
+    	padding-bottom: 103px;
+    	padding-left: 20px;
+		padding-right: 20px;
+	}
+	/*contact css start*/
+	#contact_area{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.contact{
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	.contact1 h2 {
+	    font-size: 21px;
+	    text-align: center;
+	}
+	/*footer area css start*/
+	#footer_area {
+	    padding-left: 20px;
+	    padding-right: 20px;
+	}
+	.subscribe_content{
+		text-align: center;
+	}
+	.subscribe_content h4 {
+	    font-size: 20px;
+	}
+	.subscribe_content p {
+	    font-size: 12px;
+	    padding: 0px 0px 0px 0px;
+	    margin-bottom: 0px;
+	}
+	.subscribe_content {
+    	padding: 13px 0px 0px 0px;
+	}
+	.email_area input {
+	    margin-top: 10px;
+	    margin-top: 25px;
+	    margin-bottom: 13px;
+	}
+	.email_area button {
+	    top: 29px;
+	}
+	.footer_content {
+	    margin-left: 20px;
+	    margin-right: 20px;
+	    margin-top: 45px;
+	    text-align: center;
+	}
+	.footer_menu ul li a {
+	    display: block;
+	}
+	.footer_logo p {
+	    padding-right: 0px;
+	}
+	.contact_phone i {
+	    float: none;
+	}
+	.footer_logo{
+		margin-bottom: 18px;
+	}
+	.footer_menu h6 {
+	    margin-bottom: 10px;
+	}
+	.footer_menu {
+    	margin-bottom: 18px;
+	}
+
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767px) { 
-	#login_panel {
-    	margin-left: 0px;
+	/*header area css start*/
+	.header_logo {
+	    text-align: center;
 	}
-	#registration_panel {
-    	margin-left: 0px;
+	.header_logo img{
+	    float: none;
 	}
-	.form_control{
-		margin-left: 30px !important;
-		margin-right: 30px !important;
+	.header_logo {
+	    text-align: center;
+	    margin-bottom: 15px;
 	}
-	#login_panel .level img {
-    	padding-top: 16%;
-    	width: 30%;
+	.header_menu nav ul li a {
+	    padding: 10px 10px 10px 10px !important;
+	    font-size: 12px;
 	}
-	.l_forgot {
-    	margin-left: 37px;
+	.login_area {
+	    float: none;
 	}
-	.l_login_button{
-		margin-right: 30px;
+	.login_area ul li a {
+	    padding: 10px 10px 10px 10px !important;
+	    font-size: 12px;
 	}
-	.level img {
-    	padding-top: 11%;
-    	width: 26%;
+	.login_area ul li:first-child a::after {
+	    content: "";
+	    width: 0px;
+	    height: 0px;
 	}
-	.l_class img {
-    	padding-top: 8px;
-		width: 22%;
+	/*slider area css start*/
+	.slider_content h1 {
+	    font-size: 20px;
 	}
+	.slider_content p {
+	    margin-top: 9px;
+	    padding-right: 0;
+	}
+	.join_area button {
+	    font-size: 9px;
+		padding: 7px 2px;
+	}
+	.slider_content {
+	    padding-top: 39px;
+	    padding-bottom: 35px;
+	    margin-left: -28px;
+	}
+	/*feature area css*/
+	.row_modify {
+	   margin-left: 0px;
+	   margin-right: 0px;
+	}
+	/*price area css*/
+	.price {
+	    margin-bottom: 17px;
+	}
+	.price1 {
+	    margin-bottom: 17px;
+	}
+	/*limitless area css start*/
+	.demo_img img {
+	    width: 75%;
+	    margin-left: calc(75% - 60%);
+	}
+	.limitless_content{
+		text-align: center;
+	}
+	.limitless_content h2 {
+	    font-size: 22px;
+	}
+	.limitless_sub_content p {
+	    padding: 0px 0px 0px 0px;
+	}
+	#limitless_area {
+    	padding-bottom: 103px;
+	}
+	/*contact css start*/
+	.contact{
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	.contact1 h2 {
+	    font-size: 21px;
+	    text-align: center;
+	}
+	.contact1 p{
+		text-align: center;
+		display: block;
+	}
+	/*footer area css start*/
+	.subscribe_content{
+		text-align: center;
+	}
+	.subscribe_content h4 {
+	    font-size: 20px;
+	}
+	.subscribe_content p {
+	    font-size: 12px;
+	    padding: 0px 0px 0px 0px;
+	    margin-bottom: 0px;
+	}
+	.subscribe_content {
+    	padding: 13px 0px 0px 0px;
+	}
+	.email_area input {
+	    margin-top: 10px;
+	    margin-top: 25px;
+	    margin-bottom: 13px;
+	}
+	.email_area button {
+	    top: 29px;
+	}
+	.footer_content {
+	    margin-left: 20px;
+	    margin-right: 20px;
+	    margin-top: 45px;
+	    text-align: center;
+	}
+	.footer_menu ul li a {
+	    display: block;
+	}
+	.footer_logo p {
+	    padding-right: 0px;
+	}
+	.contact_phone i {
+	    float: none;
+	}
+	.footer_logo{
+		margin-bottom: 18px;
+	}
+	.footer_menu h6 {
+	    margin-bottom: 10px;
+	}
+	.footer_menu {
+    	margin-bottom: 18px;
+	}
+
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991px) {
-	#login_panel {
-    	margin-left: 0px;
+	/*header css start*/
+	.header_logo img {
+	    width: 66%;
 	}
-	#registration_panel {
-    	margin-left: 0px;
-	} 
-	#login_panel .level img {
-    	padding-top: 40%;
-    	width: 52%;
+	.header_menu nav ul li a {
+	    padding: 10px 10px 10px 5px !important;
+	}
+	.login_area ul li:first-child a::after {
+	    content: "";
+	    width: 0px;
+	    height: 0px;
+	}
+	.login_area ul li:first-child a {
+	    border-right: 1px solid #ddd;
+	}
+	.login_area ul li a {
+	    padding: 10px 8px 10px 2px !important;
+	}
+	/*slider area css start*/
+	.slider_content {
+	    padding-top: 52px;
+	    padding-bottom: 58px;
+	    margin-left: -48px;
+	}
+	.slider_content h1 {
+	    font-size: 29px;
+	}
+	.slider_content p {
+	    margin-top: 12px;
+	    padding-right: 0px;
+	}
+	.join_area button {
+	    font-size: 11px;
+	    padding: 7px 3px;
+	}
+	/*limitless area css start*/
+	#limitless_area {
+	    margin-bottom: 0px;
+	}
+	.limitless_content h2 {
+	    font-size: 20px;
+	    margin-bottom: 11px;
+	    line-height: 25px;
+	}
+	.limitless_sub_content {
+	    margin-bottom: 4px;
+	}
+	.limitless_sub_content h6 {
+	    font-size: 13px;
+	    margin-bottom: 2px;
+	}
+	.demo_img img {
+	    margin-top: 48px;
+	}
+	/*contact area css start*/
+	.row_modify {
+	    margin-left: -100px;
+	    margin-right: -100px;
+	}
+	#contact_area {
+	    margin-bottom: 30px;
+	}
+	.contact h2 {
+	    font-size: 24px;
+	    margin-bottom: 4px;
+	}
+	.contact1 h2 {
+	    font-size: 24px;
+	}
+	/*footer area css start*/
+	.subscribe_content {
+	    padding: 28px 0px 15px 7px;
+	}
+	.subscribe_content h4 {
+	    font-size: 16px;
+	}
+	.subscribe_content p {
+	    padding: 0px 0px 0px 0px;
+	    margin-bottom: 9px;
 	}
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199px) {  }
+@media (min-width: 992px) and (max-width: 1199px) {
+	.login_area ul li:first-child a::after {
+	    content: "";
+	    width: 0px;
+	    height: 0px;
+	}
+	.login_area ul li:first-child a {
+	    border-right: 1px solid #ddd;
+	}
+	.login_area ul li a {
+    	padding: 10px 16px 10px 12px !important;
+	}
+	.slider_content {
+	    margin-left: -70px;
+	}
+}
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { 
-	
-}
+@media (min-width: 1200px) {}

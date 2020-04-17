@@ -1,0 +1,190 @@
+<%
+# BigBlueButton open source conferencing system - http://www.bigbluebutton.org/.
+# Copyright (c) 2018 BigBlueButton Inc. and by respective authors (see below).
+# This program is free software; you can redistribute it and/or modify it under the
+# terms of the GNU Lesser General Public License as published by the Free Software
+# Foundation; either version 3.0 of the License, or (at your option) any later
+# version.
+#
+# BigBlueButton is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+# You should have received a copy of the GNU Lesser General Public License along
+# with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
+%>
+
+<div id="contact_area">
+      <div class="row row_modify">
+              <div class="col-md-1"></div>
+              <div class="col-md-10">
+                      <div class="row">
+                              <div class="col-md-6">
+                                      <div class="contact">
+                                              <h2><%= t("contact.title").html_safe %></h2>
+                                              <p><%= t("contact.query").html_safe %></p>
+                                              <div class="form_area">
+                                                      <form>
+                                                              <div class="row">
+                                                                      <div class="col-md-12">
+                                                                              <input type="text" name="name" placeholder="<%= t("contact.enter_name") %>">
+                                                                      </div>
+                                                              </div>
+                                                              <div class="row">
+                                                                      <div class="col-md-6">
+                                                                              <input type="email" name="email" placeholder="<%= t("contact.enter_email") %>">
+                                                                      </div>
+                                                                      <div class="col-md-6">
+                                                                              <input type="text" name="phone" placeholder="<%= t("contact.enter_phone") %>">
+                                                                      </div>
+                                                              </div>
+                                                              <div class="row">
+                                                                      <div class="col-md-12">
+                                                                              <textarea rows="3" cols="39" placeholder="<%= t("contact.enter_query").html_safe %>"></textarea>
+                                                                      </div>
+                                                              </div>
+                                                              <div class="row">
+                                                                      <div class="col-md-12">
+                                                                              <button type="submit"><%= t("contact.send") %></button>
+                                                                      </div>
+                                                              </div>
+                                                      </form>
+                                              </div>
+                                      </div>
+                              </div>
+                              <div class="col-md-6">
+                                      <div class="contact1">
+                                              <h2><%= t("contact.question.title").html_safe %></h2>
+                                              <p class="con_ans"><%= t("contact.question.desc").html_safe %></p>
+
+                      <div class="panel-group symb" id="accordion">
+
+                          <!-- Single Item -->
+                          <div class="panel panel-default">
+                              <div class="panel-heading">
+                                  <h4 class="panel-title">
+                                      <ul>
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#ov1" class="collapsed" aria-expanded="false">
+
+                                              <li>
+                                                  <h4><span class="a_count">1</span><%= t("contact.question.questions.what_classlive").html_safe %></h4>
+                                              </li>
+
+                                          </a>
+                                      </ul>
+                                  </h4>
+                              </div>
+                              <div id="ov1" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                  <div class="panel-body">
+                                      <p align="justify">
+                                          <%= t("contact.question.answers.what_classlive").html_safe %>
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                          <!-- End Single Item -->
+
+                          <!-- Single Item -->
+                          <div class="panel panel-default">
+                              <div class="panel-heading">
+                                  <h4 class="panel-title">
+                                      <ul>
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#ov2" class="collapsed" aria-expanded="false">
+
+                                              <li>
+                                                  <h4><span class="a_count">2</span><%= t("contact.question.questions.sign_in_instructor").html_safe %></h4>
+                                              </li>
+
+                                          </a>
+                                      </ul>
+                                  </h4>
+                              </div>
+                              <div id="ov2" class="panel-collapse collapse" aria-expanded="false">
+                                  <div class="panel-body">
+                                      <p align="justify">
+                                          <%= t("contact.question.answers.sign_in_instructor").html_safe %>
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                          <!-- End Single Item -->
+                          <!-- Single Item -->
+                          <div class="panel panel-default">
+                              <div class="panel-heading">
+                                  <h4 class="panel-title">
+                                      <ul>
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#ov3" class="collapsed" aria-expanded="false">
+
+                                              <li>
+                                                  <h4><span class="a_count">3</span><%= t("contact.question.questions.registration").html_safe %></h4>
+                                              </li>
+
+                                          </a>
+                                      </ul>
+                                  </h4>
+                              </div>
+                              <div id="ov3" class="panel-collapse collapse" aria-expanded="false">
+                                  <div class="panel-body">
+                                      <p align="justify">
+                                          <%= t("contact.question.answers.registration").html_safe %>
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                          <!-- End Single Item -->
+                          <!-- Single Item -->
+                          <div class="panel panel-default">
+                              <div class="panel-heading">
+                                  <h4 class="panel-title">
+                                      <ul>
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#ov4" class="collapsed" aria-expanded="false">
+
+                                              <li>
+                                                  <h4><span class="a_count">4</span><%= t("contact.question.questions.take_more_live_class").html_safe %></h4>
+                                              </li>
+
+                                          </a>
+                                      </ul>
+                                  </h4>
+                              </div>
+                              <div id="ov4" class="panel-collapse collapse" aria-expanded="false">
+                                  <div class="panel-body">
+                                      <p align="justify">
+                                          <%= t("contact.question.answers.take_more_live_class").html_safe %>
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                          <!-- End Single Item -->
+                          <!-- Single Item -->
+                          <div class="panel panel-default">
+                              <div class="panel-heading">
+                                  <h4 class="panel-title">
+                                      <ul>
+                                          <a data-toggle="collapse" data-parent="#accordion" href="#ov5" class="collapsed" aria-expanded="false">
+
+                                              <li>
+                                                  <h4><span class="a_count">5</span><%= t("contact.question.questions.whole_session").html_safe %></h4>
+                                              </li>
+
+                                          </a>
+                                      </ul>
+                                  </h4>
+                              </div>
+                              <div id="ov5" class="panel-collapse collapse" aria-expanded="false">
+                                  <div class="panel-body">
+                                      <p align="justify">
+                                          <%= t("contact.question.answers.whole_session").html_safe %>
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                          <!-- End Single Item -->
+                      </div>
+
+                                      </div>
+                              </div>
+                      </div>
+              </div>
+              <div class="col-md-1"></div>
+      </div>
+</div>

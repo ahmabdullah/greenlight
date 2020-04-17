@@ -20,5 +20,6 @@ Rails.application.config.assets.precompile += %w(_primary_theme.scss
                                                  extra.scss
                                                  responsive.scss
                                                  styles.scss
+                                                 custom.scss
                                                  bootstrap-select.min.js
                                                  bootstrap-select.min.css)

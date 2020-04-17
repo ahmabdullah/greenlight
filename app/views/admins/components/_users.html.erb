@@ -78,7 +78,7 @@
                 <%= t("administrator.users.table.not_found") %>
               </td>
             </tr>
-            <% if @users %>
+            <% unless @users.blank? %>
               <% @users.each do |user| %>
                 <% if user != current_user %>
                   <tr data-user-uid="<%= user.uid %>">
@@ -90,7 +90,7 @@
                     <td><%= user.provider %></td>
                     <td class="text-center">
                       <% roles = user.roles().pluck(:name) %>
-                      <%= render "admins/components/admins_role", role: user.highest_priority_role %>
+                      <%= render "admins/components/user_status", role: user.highest_priority_role, user_status: user.status %>
                     </td>
                     <td>
                       <% if !roles.include?("super_admin") %>
@@ -127,6 +127,19 @@
                               <button class= "merge-user dropdown-item" data-path="<%= merge_user_path(user_uid: user.uid) %>" data-info="<%= user.slice(:name, :email, :uid).to_json %>" data-toggle="modal" data-target="#mergeUserModal">
                                 <i class="dropdown-icon fas fa-user-friends"></i> <%= t("administrator.users.settings.merge") %>
                               </button>
+                              <% if user.status.to_i == 1 %>  
+                                <%= button_to admin_upgrade_path(user_uid: user.uid), class: "dropdown-item", "data-disable": "" do %>
+                                  <i class="dropdown-icon fas fa-lock"></i> <%= t("administrator.users.settings.upgrade") %>
+                                <% end %>
+                              <% elsif user.status.to_i == 2 %>  
+                                <%= button_to admin_downgrade_path(user_uid: user.uid), class: "dropdown-item", "data-disable": "" do %>
+                                  <i class="dropdown-icon fas fa-lock"></i> <%= t("administrator.users.settings.downgrade") %>
+                                <% end %>
+                              <% else %>  
+                                <%= button_to admin_downgrade_path(user_uid: user.uid), class: "dropdown-item", "data-disable": "" do %>
+                                  <i class="dropdown-icon fas fa-lock"></i> <%= t("administrator.users.settings.downgrade") %>
+                                <% end %>
+                              <% end %>
                               <%= button_to admin_ban_path(user_uid: user.uid), class: "dropdown-item", "data-disable": "" do %>
                                 <i class="dropdown-icon fas fa-lock"></i> <%= t("administrator.users.settings.ban") %>
                               <% end %>

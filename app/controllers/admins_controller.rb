@@ -24,7 +24,7 @@ class AdminsController < ApplicationController
   include Rolify
   include Populator
 
-  manage_users = [:edit_user, :promote, :demote, :ban_user, :unban_user, :approve, :reset, :merge_user]
+  manage_users = [:edit_user, :promote, :demote, :ban_user, :unban_user, :approve, :reset, :merge_user, :downgrade_user, :upgrade_user]
   manage_deleted_users = [:undelete]
   authorize_resource class: false
   before_action :find_user, only: manage_users
@@ -40,10 +40,64 @@ class AdminsController < ApplicationController
 
     @role = params[:role] ? Role.find_by(name: params[:role], provider: @user_domain) : nil
     @tab = params[:tab] || "active"
+    @status = params[:status] || "all"
 
     @user_list = merge_user_list
 
     @pagy, @users = pagy(manage_users_list)
+  end
+  
+  # GET /admins/email_contacts
+  def email_contacts
+    # Initializa the data manipulation variables
+    @search = params[:search] || ""
+    @order_column = params[:column] && params[:direction] != "none" ? params[:column] : "email"
+    @order_direction = params[:direction] && params[:direction] != "none" ? params[:direction] : "DESC"
+
+    @pagy, @emails = pagy(manage_email_list)
+#    @users = User.includes(:roles).deleted
+#    #abort(users.inspect)
+##    @users = User.where.not(uid: ['gl-ipeogenefukk','gl-abnavnvuntzv', 
+##                                  'gl-srsjqyulyumr','gl-zgiwyzffkzgt',
+##                                  'gl-ynfwuedpopyo','gl-chlfaoafhfkk',
+##                                  'gl-yyiivtqdynoh','gl-wqacbmfgznon',
+##                                  'gl-gnvofqusqpvk','gl-puyzrxgjxrjz',
+##                                  'gl-davnvlrvnzbm','gl-gucldnaryogp',
+##                                  'gl-flexvlupnbly','gl-dwobsfxuwdnm',
+##                                  'gl-pvvfjkfwanvl',
+##                                  'gl-lehmhevmgtwn','gl-vtzmhcbiyhro'])
+#    @users.each do |user|
+#      nuser = User.include_deleted.find_by(uid: user.uid)
+#      nuser.rooms.include_deleted.each do |room|
+#        room.destroy(true)
+#      end
+#      nuser.destroy(true)
+#    end
+    unless params[:user_uid_tmp].blank?
+      #@user = User.find_by(uid: params[:user_uid_tmp])
+      #abort(@user.inspect)
+      unless params[:create_user].blank?
+        if params[:create_user].to_i = 1
+          
+        end
+      end
+      unless params[:new_password].blank?
+#        User.find_or_initialize_by(uid: params[:user_uid_tmp]).tap do |u|
+#          u.password = params[:new_password]
+#          u.provider = 'greenlight'
+#          unless u.save!
+#            abort(u.errors.inspect)
+#          end
+#        end
+        @user = User.find_by(uid: params[:user_uid_tmp])
+        @user.password = params[:new_password]
+        
+        if @user.save
+        else
+          abort(@user.errors.inspect)
+        end
+      end
+    end
   end
 
   # GET /admins/site_settings
@@ -63,11 +117,12 @@ class AdminsController < ApplicationController
   # GET /admins/rooms
   def server_rooms
     @search = params[:search] || ""
+    @status_room = params[:status_room] || 0
     @order_column = params[:column] && params[:direction] != "none" ? params[:column] : "created_at"
     @order_direction = params[:direction] && params[:direction] != "none" ? params[:direction] : "DESC"
 
     @running_room_bbb_ids = all_running_meetings[:meetings].pluck(:meetingID)
-
+    #abort(@running_room_bbb_ids.inspect)
     @user_list = shared_user_list if shared_access_allowed
 
     @pagy, @rooms = pagy_array(server_rooms_list)
@@ -86,6 +141,20 @@ class AdminsController < ApplicationController
     @user.add_role :denied
 
     redirect_back fallback_location: admins_path, flash: { success: I18n.t("administrator.flash.banned") }
+  end
+
+  # POST /admins/upgrade_user/:user_uid
+  def upgrade_user
+    @user.update_attributes(status: 2)
+    
+    redirect_back fallback_location: admins_path, flash: { success: I18n.t("administrator.flash.upgrade") }
+  end
+
+  # POST /admins/downgrade_user/:user_uid
+  def downgrade_user
+    @user.update_attributes(status: 1)
+    
+    redirect_back fallback_location: admins_path, flash: { success: I18n.t("administrator.flash.downgrade") }
   end
 
   # POST /admins/unban/:user_uid
